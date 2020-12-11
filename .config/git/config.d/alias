@@ -1,0 +1,16 @@
+[alias]
+	b = branch
+	co = checkout
+	d = diff
+	ls = ls-files
+	s = status -s
+
+	l = ! git-log-branch --oneline
+	lg = l --graph --simplify-by-decoration
+
+	amend = commit --amend --no-edit
+	continue = rebase --continue
+
+	alias = ! git-alias
+	top = rev-parse --show-toplevel
+	unstage = reset HEAD

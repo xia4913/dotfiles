@@ -1,0 +1,11 @@
+[core]
+	pager = delta
+
+[color]
+	ui = always
+
+[include]
+	path = config.d/alias
+	path = config.d/delta
+	path = config.d/user
+	path = config.d/github

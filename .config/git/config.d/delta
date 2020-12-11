@@ -1,0 +1,12 @@
+[delta]
+	features = decorations
+	syntax-theme = Qiita
+
+[delta "decorations"]
+	#commit-dicoration-style = none
+	file-decoration-style = none
+	file-style = bold yellow
+	hunk-header-decoration-style = none
+
+[interactive]
+	diffFilter = delta --color-only
