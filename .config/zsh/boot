@@ -1,0 +1,15 @@
+() {
+	readonly local rc_dir=$1
+	readonly local boot_dir=$ZDOTDIR/boot.d
+	readonly local boot_functions=($~boot_dir/*(.:t))
+
+	autoload -Uz add-zsh-hook
+
+	fpath+=$boot_dir
+	autoload -Uz $boot_functions
+
+	load-rc-dir "$rc_dir"
+
+	fpath=(${fpath:#$boot_dir})
+	unfunction $boot_functions
+} "$@"

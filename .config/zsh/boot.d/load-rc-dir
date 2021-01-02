@@ -1,0 +1,11 @@
+readonly local base_dir=$1
+if [[ ! -d "$base_dir" ]]; then
+	return
+fi
+
+load-rc $(files-in-dir "$base_dir"/pre)
+load-rc $(files-in-dir "$base_dir"/common)
+load-rc -f "$base_dir"/term/{"$TERM",default}
+load-rc "$base_dir"/ostype/"$OSTYPE"
+load-rc "$base_dir"/host/"${HOST%%.*}"
+load-rc $(files-in-dir "$base_dir"/post)

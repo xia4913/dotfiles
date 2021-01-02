@@ -1,0 +1,27 @@
+local opt
+local first_only=false
+while getopts :f opt "$@"; do
+	case $opt in
+	f)
+		first_only=true
+		;;
+	esac
+done
+shift $(( OPTIND - 1 ))
+
+local file
+local found=false
+local is_verbose=$(setopt | grep -q '^verbose$' && echo true)
+for file in "$@"; do
+	if [[ -f "$file" ]]; then
+		found=true
+		if [[ "$is_verbose" = true ]]; then
+			echo "loading $file" >&2
+		fi
+		. "$file"
+		if [[ "$first_only" = true ]]; then
+			break
+		fi
+	fi
+done
+[[ "$found" = true ]]
