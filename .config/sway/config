@@ -1,0 +1,20 @@
+output              DP-1 scale 1
+
+default_orientation horizontal
+workspace_layout    tabbed
+focus_wrapping      force
+
+font                xft:monospace Regular 10
+swaynag_command     "swaynag -f 24"
+
+xwayland            enable
+
+set $dir ~/.config/sway
+
+include config.d/bindsym
+include config.d/window
+include config.d/bar
+include config.d/default-apps
+
+exec $dir/bin/session
+#exec $dir/bin/default-apps

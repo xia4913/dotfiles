@@ -2,15 +2,12 @@
 	b = branch
 	co = checkout
 	d = diff
+
 	s = status -s
+	ss = status-short-staged
+	sr = status-short-red
+	sru = sr -u
 
 	ls = ls-files
-	untracked = ls --others --exclude-standard
-
 	l = log-branch --oneline
 	lg = l --graph --simplify-by-decoration
-
-	amend = commit --amend --no-edit
-	continue = rebase --continue
-
-	unstage = reset HEAD

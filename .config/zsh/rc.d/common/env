@@ -1,0 +1,11 @@
+if [[ -n $TMPDIR ]] && [[ ! -w $TMPDIR ]]; then
+	unset TMPDIR
+fi
+
+#if [[ $LANG = $locale_ja ]]; then
+	unset LANG
+	export LC_ALL=C
+#fi
+
+HISTSIZE=1000
+LISTMAX=0

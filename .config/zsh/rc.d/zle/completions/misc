@@ -1,0 +1,13 @@
+zstyle ':completion:*:commands' rehash 1
+zstyle ':completion:*' completer _oldlist _complete _match _ignored _prefix
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z} r:|[-_.]=**'
+zstyle ':completion:*:*files' ignored-patterns '*.lock'
+zstyle ':completion:*' use-cache yes
+zstyle ':completion:*' cache-path ~/.cache/zsh/comp
+zstyle ':completion:*:warnings' format '%F{red}no match %d%f'
+
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' format '%B%F{yellow}[%d]%f%b'
+
+# exa default theme https://github.com/ogham/exa/blob/master/src/theme/default_theme.rs
+zstyle ':completion:*' list-colors 'di=34;1' ln=36 or=31

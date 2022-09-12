@@ -1,4 +1,6 @@
-*.[0-9]
 .trash/
 .obsolete/
-/local/
+.local/
+
+.env*
+*.[0-9]

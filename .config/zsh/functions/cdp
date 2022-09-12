@@ -1,0 +1,8 @@
+q=$1
+if [[ -n $q ]]; then
+	q=$q\$
+fi
+dir=$(dseq | s $q)
+if [[ -n $dir ]]; then
+	cd $dir
+fi

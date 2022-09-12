@@ -1,0 +1,12 @@
+bindsym $mod+Alt+l mode "layout"
+mode "layout" {
+    bindsym Escape  $break
+    bindsym Shift+h split horizontal;   $break
+    bindsym Shift+v split vertical;     $break
+    bindsym Shift+t split toggle;       $break
+    bindsym h       layout splith;      $break
+    bindsym v       layout splitv;      $break
+    bindsym s       layout stacking;    $break
+    bindsym t       layout tabbed;      $break
+    bindsym Space   layout toggle all
+}

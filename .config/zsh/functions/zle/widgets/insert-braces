@@ -1,0 +1,11 @@
+LBUFFER+={
+
+local -A matched_words
+autoload -Uz match-words-by-style
+match-words-by-style -w unspecified -C ' |/.'
+if [[ -z $matched_words[ws-after-cursor] ]]; then
+    (( CURSOR += ${#matched_words[word-after-cursor]} ))
+fi
+
+LBUFFER+=,
+RBUFFER=}$RBUFFER

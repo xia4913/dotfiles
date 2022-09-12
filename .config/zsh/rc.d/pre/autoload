@@ -1,0 +1,13 @@
+autoload -Uz add-zsh-hook
+setopt local_options extended_glob null_glob
+local top=$ZDOTDIR/functions
+
+local dir= file=
+for dir in $top{,/**/*~*/zle(|/*)}(/); do
+    fpath+=$dir
+    for file in $(files-in-dir $dir); do
+        local name=${file##*/}
+        autoload -Uz $name
+        zcompile-unless $file
+    done
+done

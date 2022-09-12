@@ -1,0 +1,4 @@
+#!/bin/sh -Ceu
+
+systemctl --user import-environment WAYLAND_DISPLAY SWAYSOCK #XDG_SEAT
+systemctl --user start sway-session.target

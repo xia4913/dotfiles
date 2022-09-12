@@ -1,0 +1,6 @@
+if [[ $LASTWIDGET != $WIDGET ]]; then
+	if (( CURSOR > 0 )) && [[ -z $RBUFFER ]] && [[ $LBUFFER[$CURSOR] != ' ' ]]; then
+		LBUFFER=$LBUFFER' '
+	fi
+fi
+zle insert-last-word

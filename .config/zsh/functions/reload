@@ -1,0 +1,5 @@
+readonly local name=$1
+unfunction $name
+#autoload -Uz +X $name
+autoload -U +X $name
+#autoload $name

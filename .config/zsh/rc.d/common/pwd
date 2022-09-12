@@ -1,0 +1,6 @@
+add-zsh-hook chpwd show-pwd
+
+if [[ -n $WAYLAND_DISPLAY ]]; then
+    add-zsh-hook chpwd title-pwd
+    title-pwd
+fi

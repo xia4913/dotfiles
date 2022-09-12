@@ -1,0 +1,31 @@
+## Changing Directories
+setopt auto_pushd
+setopt pushd_ignore_dups
+
+## Expansion and Globbing
+setopt magic_equal_subst
+setopt numeric_glob_sort
+
+## History
+setopt hist_find_no_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+
+## Initialisation
+
+## Input/Output
+unsetopt clobber
+unsetopt flow_control
+setopt ignore_eof
+setopt rm_star_silent
+
+## Prompting
+unsetopt prompt_cr
+
+## Scripts and Functions
+## Shell Emulation
+## Shell State
+
+## Misc
+setopt long_list_jobs

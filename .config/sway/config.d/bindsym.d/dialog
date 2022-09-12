@@ -1,0 +1,12 @@
+bindsym $mod+Alt+d mode "dialog"
+mode "dialog" {
+    bindsym Escape  $break
+    bindsym w       exec "dialog-term -e sway-select-window";       $break
+    bindsym r       exec "dialog-term -e sway-launch";              $break
+    bindsym Colon   exec "dialog-term -e rlwrap sway-repl";         $break
+    bindsym i       exec "sway-focused | jq .id | dialog-term-x 'sway-node {} | jq -C | pp'"; $break
+    bindsym p       exec "dialog-term -e procs";                    $break
+    bindsym t       exec "dialog-term -e btm";                      $break
+    bindsym f       exec "dialog-term -e sh -c 'neofetch; read'";   $break
+    bindsym Return  exec "dialog-term";                             $break
+}

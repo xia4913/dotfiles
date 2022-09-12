@@ -1,0 +1,25 @@
+readonly local hi=%F{102}
+readonly local dim=%B%F{008}
+readonly local normal=%f%b
+readonly local prompt_indent=${(r:$(($SHLVL - 1)):: :)}
+local user=%n
+if [[ -n $DOAS_USER ]] || [[ -n $SUDO_USER ]] || [[ ! -O $ZDOTDIR ]]; then
+	user=$hi$user$dim
+fi
+local host=%m
+if [[ -n $SSH_CONNECTION ]]; then
+	host=$hi$host$dim
+fi
+local main=$user@$host
+if [[ -n $TAB ]]; then
+	main=[$TAB]' '$main
+fi
+readonly local char=%(!.#.$)
+PROMPT=$prompt_indent$dim$main$char$normal' '
+RPROMPT=$dim'<%v'$normal
+
+autoload promptnl
+add-zsh-hook precmd promptnl
+
+#setopt PRINT_EXIT_VALUE
+add-zsh-hook precmd show-exit-status

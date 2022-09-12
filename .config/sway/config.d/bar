@@ -1,0 +1,5 @@
+bar {
+	mode hide
+	status_command "exec ja exec sway-bar-status"
+	font xft:monospace 23
+}

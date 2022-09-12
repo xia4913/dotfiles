@@ -1,0 +1,157 @@
+theme = "xia"
+
+[editor]
+# rulers = [72]
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+
+# [lsp]
+# display-messages = true
+
+[keys.insert]
+C-s = "goto_first_nonwhitespace"
+C-j = [ "append_to_line", "open_below" ]
+C-t = [ "move_char_left", "delete_selection", "move_char_left", "paste_before", "move_char_right" ]
+
+[keys.normal]
+h = "no_op"
+j = "no_op"
+k = "no_op"
+l = "no_op"
+C-x = "no_op"
+
+C-a = "goto_line_start"
+C-e = "goto_line_end"
+C-s = "goto_first_nonwhitespace"
+
+A-d = "no_op"
+D = "delete_selection_noyank"
+
+minus = "decrement"
+"+" = "increment"
+
+esc = [ "keep_primary_selection", "collapse_selection" ]
+C-t = [ "collapse_selection", "delete_selection", "move_char_left", "paste_before", "move_char_right" ]
+C-A-c = [ "yank_joined_to_clipboard", "paste_clipboard_after", "toggle_comments" ]
+
+  # goto
+  [keys.normal.g]
+  g = "goto_last_modification"
+  e = "no_op"
+  h = "no_op"
+  l = "no_op"
+
+  home = "goto_line_start"
+  end = "goto_line_end"
+  C-a = "goto_line_start"
+  C-e = "goto_line_end"
+  C-s = "goto_first_nonwhitespace"
+  lt = "goto_file_start"
+  # gt = [ "goto_last_line", "goto_line_end" ]
+  gt = [ "goto_last_line", "move_line_down" ]
+
+  # match
+  [keys.normal.m]
+  x = "expand_selection"
+  X = "shrink_selection"
+  # w = [ "move_prev_word_start", "move_next_word_end" ]            # select word
+  # W = [ "move_prev_long_word_start", "move_next_long_word_end" ]  # select WORD
+
+  # view
+  [keys.normal.z]
+  j = "no_op"
+  k = "no_op"
+  [keys.normal.Z]
+  j = "no_op"
+  k = "no_op"
+
+  # window
+  [keys.normal.C-w]
+  h = "no_op"
+  j = "no_op"
+  k = "no_op"
+  l = "no_op"
+  C-h = "no_op"
+  C-j = "no_op"
+  C-k = "no_op"
+  C-l = "no_op"
+  n = "hsplit"
+  [keys.normal.space.w]
+  h = "no_op"
+  j = "no_op"
+  k = "no_op"
+  l = "no_op"
+  C-h = "no_op"
+  C-j = "no_op"
+  C-k = "no_op"
+  C-l = "no_op"
+  n = "hsplit"
+
+  [keys.normal.space]
+  space = "goto_last_accessed_file"
+
+[keys.select]
+v = "collapse_selection"
+";" = [ "collapse_selection", "normal_mode" ]
+
+h = "no_op"
+j = "no_op"
+k = "no_op"
+l = "no_op"
+
+C-a = "goto_line_start"
+C-e = "goto_line_end"
+C-s = "goto_first_nonwhitespace"
+
+  # goto
+  [keys.select.g]
+  g = "goto_last_modification"
+  e = "no_op"
+  h = "no_op"
+  l = "no_op"
+
+  home = "goto_line_start"
+  end = "goto_line_end"
+  C-a = "goto_line_start"
+  C-e = "goto_line_end"
+  C-s = "goto_first_nonwhitespace"
+  lt = "goto_file_start"
+  gt = [ "goto_last_line", "goto_line_end" ]
+
+  # match
+  [keys.select.m]
+  x = "expand_selection"
+
+  # view
+  [keys.select.z]
+  j = "no_op"
+  k = "no_op"
+  [keys.select.Z]
+  j = "no_op"
+  k = "no_op"
+
+  # window
+  [keys.select.C-w]
+  h = "no_op"
+  j = "no_op"
+  k = "no_op"
+  l = "no_op"
+  C-h = "no_op"
+  C-j = "no_op"
+  C-k = "no_op"
+  C-l = "no_op"
+  [keys.select.space.w]
+  h = "no_op"
+  j = "no_op"
+  k = "no_op"
+  l = "no_op"
+  C-h = "no_op"
+  C-j = "no_op"
+  C-k = "no_op"
+  C-l = "no_op"
+
+  # space
+  [keys.select.space]
+  space = "goto_last_accessed_file"

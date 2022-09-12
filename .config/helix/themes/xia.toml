@@ -1,0 +1,124 @@
+# Author : OGAWA Takanori <xia4913@gmail.com>
+
+"type" = "type"
+"type.builtin" = { fg = "type", modifiers = ["bold"] }
+# "constructor" = "#dc597f"
+"constant" = "text"
+"constant.builtin" = { fg = "text", modifiers = ["bold"] }
+# "constant.builtin.boolean" = {}
+# "constant.character" = {}
+# "constant.character.escape" = { fg = "#7fdc59", modifiers = ["bold"] }
+"constant.numeric" = "numeric"
+# "constant.numeric.integer" = "#59c0dc"
+# "constant.numeric.float" = "#59c0dc"
+"string" = "string"
+# "string.regexp" = "#59dcb7"
+# "string.special" = "#59dcb7"
+# "string.special.path" = "#59dcb7"
+# "string.special.url" = "#59dcb7"
+# "string.special.symbol" = "#59dcb7"
+"comment" = "dark"
+# "comment.line" = "#627d9d"
+# "comment.block" = "#627d9d"
+# "comment.block.documentation" = "comment"
+"variable" = "text"
+"variable.builtin" = { fg = "text", modifiers = ["bold"] }
+# "variable.parameter" = "#c6b8ad"
+# "variable.other" = "#c6b8ad"
+# "variable.other.member" = "#c6b8ad"
+# "variable.function" = "#c6b8ad"
+"label" = "text"
+"punctuation" = "dark"
+# "punctuation.delimiter" = "dark"
+# "punctuation.bracket" = "dark"
+"keyword" = { fg = "keyword", modifiers = ["bold"] }
+"operator" = "operator"
+"function" = "text"
+"function.builtin" = { fg = "text", modifiers = ["bold"] }
+# "function.method" = {}
+"function.macro" = { fg = "text", modifiers = ["bold"] }
+# "function.special" = {}
+"tag" = "text"
+"namespace" = "text"
+# "namespace.heading" = "#d32c5d"
+# "namespace.list" = "#d32c5d"
+# "namespace.list.unnumbered" = "#d32c5d"
+# "namespace.list.numbered" = "#d32c5d"
+# "namespace.bold" = "#d32c5d"
+# "namespace.italic" = "#d32c5d"
+# "namespace.link" = "#d32c5d"
+# "namespace.link.url" = "#d32c5d"
+# "namespace.link.label" = "#d32c5d"
+# "namespace.quote" = "#d32c5d"
+# "namespace.raw" = "#d32c5d"
+# "namespace.raw.inline" = "#d32c5d"
+# "namespace.raw.block" = "#d32c5d"
+
+"attribute" = "#dc7759"
+"special" = "#7fdc59"
+"module" = "#d32c5d"
+
+"ui.background" = {}
+# "ui.cursor" = { bg = "gray" }
+"ui.cursor" = { bg = "gray" }
+"ui.cursor.insert" = { fg = "black", bg = "white" }
+"ui.cursor.select" = { bg = "red" }
+"ui.cursor.match" = { fg = "red" }
+# "ui.cursor.primary" = { modifiers = ["reversed"] }
+# "ui.cursor.primary" = { bg = "gray" }
+"ui.linenr" = { fg = "gray", modifiers = ["dim"] }
+"ui.linenr.selected" = { fg = "lilac" }
+"ui.statusline" = { fg = "lilac", bg = "revolver" }
+"ui.statusline.inactive" = { fg = "lilac", bg = "revolver", modifiers = ["dim"] }
+"ui.popup" = { fg = "lilac", bg = "revolver" }
+"ui.window" = { fg = "revolver", bg = "revolver" }
+"ui.help" = { fg = "lilac", bg = "revolver" }
+# "ui.text" = { fg = "white", modifiers = ["dim"] }
+# "ui.text" = { fg = "lilac" }
+"ui.text" = { fg = "gray" }
+"ui.text.focus" = { fg = "cyan" }
+# "ui.info" = {}
+# "ui.info.text" = {}
+"ui.menu" = { fg = "gray" }
+"ui.menu.selected" = { fg = "cyan" }
+# "ui.selection" = { bg = "revolver", modifiers = ["dim"] }
+# "ui.selection" = { bg = "dark-gray", modifiers = ["dim"] }
+"ui.selection" = { bg = "dim-gray" }
+# "ui.selection.primary" = { bg = "revolver" }
+"ui.selection.primary" = { bg = "dark-gray" }
+
+warning = { fg = "red", modifiers = ["dim"] }
+error = { fg = "red" }
+info = "gray"
+hint = "lilac"
+diagnostic = "gray"
+
+
+[palette]
+black      = "#112222"
+red        = "#ee6677"
+green      = "#99dd77"
+yellow     = "#cc9966"
+blue       = "#66aaee"
+magenta    = "#cc77dd"
+cyan       = "#55bbcc"
+gray       = "#777777"
+
+light-gray = "#999999"
+white      = "#bbbbbb"
+
+dark-gray  = "#444444"
+dim-gray   = "#222222"
+
+revolver   = "#281733"
+lilac      = "#dbbfef"
+
+text       = "#bbbbbb"
+dark       = "#666666"
+keyword    = "#bbbb77"
+numeric    = "#ddbbdd"
+string     = "#99bbaa"
+type       = "#aaaadd"
+operator   = "#ee9999"
+
+debug      = "#ff0000"

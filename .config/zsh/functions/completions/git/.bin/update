@@ -1,0 +1,21 @@
+#!/bin/sh -Ceu
+
+srcdir="$HOME/bin/git"
+echo _git-* | grep -v '\.zwc$' | while read file; do
+    command=$(echo "$file" | sed 's/^_//')
+    if [ -f "$srcdir/$command" ]; then
+        continue
+    fi
+    rm "$file"
+done
+for target in ~/bin/git/git-*; do
+    command=$(progname "$target")
+    func="_${command}"
+    if [ -f "$func" ]; then
+        continue
+    fi
+    cat >"$func" <<EOF
+#compdef $command
+#description
+EOF
+done

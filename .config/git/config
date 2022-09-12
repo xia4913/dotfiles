@@ -1,9 +1,7 @@
-[core]
-	pager = delta
-
+[init]
+	defaultBranch = main
 [color]
 	ui = always
-
 [include]
 	path = config.d/alias
 	path = config.d/delta

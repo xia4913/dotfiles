@@ -1,0 +1,16 @@
+() {
+	if [[ -n $SUDO_USER ]]; then
+		return
+	fi
+
+	#if [[ -z $SSH_AUTH_SOCK ]]; then
+	if [[ -n $SSH_CONNECTION ]] || [[ -z $SSH_AUTH_SOCK ]]; then
+		update-ssh-auth-sock
+		if [[ -z $COLORTERM ]]; then
+			case $TERM in
+			alacritty)
+				export COLORTERM=truecolor
+			esac
+		fi
+	fi
+}

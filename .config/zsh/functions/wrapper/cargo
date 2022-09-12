@@ -1,0 +1,13 @@
+local suggest
+case $1 in
+new|gen)
+    # suggest="cd $*[-1]"
+    suggest="cd $2"
+    ;;
+esac
+
+command $0 $*
+
+if (( $status == 0 )) && [[ -n $suggest ]]; then
+    print -z $suggest
+fi

@@ -1,0 +1,3 @@
+if [[ -n $_INITIAL_COMMAND ]]; then
+	print -z $_INITIAL_COMMAND
+fi

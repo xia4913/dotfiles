@@ -1,0 +1,10 @@
+zmodload zsh/zpty
+
+local name=pty-$(date +%s)
+zpty $name ${1+$@}
+if [[ ! -t 1 ]]; then
+	setopt local_traps
+	trap '' INT
+fi
+zpty -r $name
+zpty -d $name

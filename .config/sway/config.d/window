@@ -1,0 +1,13 @@
+for_window [shell="xwayland"] title_format "[X] %title"
+
+for_window [app_id="dialog"] floating enable, resize set 1280 720, opacity set 0.9
+
+#for_window [app_id="firefox" title="について$"] floating enable
+for_window [app_id="firefox" title="^Firefox Nightly .+"] floating enable # XXX
+
+#set $firefox_notify_criteria app_id="firefox" title="^$"
+#for_window [$firefox_notify_criteria] floating enable
+#no_focus [$firefox_notify_criteria]
+
+for_window [app_id="mpv"] floating enable
+no_focus [app_id="mpv"]

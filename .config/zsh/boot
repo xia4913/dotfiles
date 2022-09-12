@@ -3,13 +3,17 @@
 	readonly local boot_dir=$ZDOTDIR/boot.d
 	readonly local boot_functions=($~boot_dir/*(.:t))
 
-	autoload -Uz add-zsh-hook
+	path=(~/bin/scripting $path)	# XXX
 
 	fpath+=$boot_dir
 	autoload -Uz $boot_functions
+	local file
+	for file in $(files-in-dir $boot_dir); do
+		zcompile-unless $file
+	done
 
-	load-rc-dir "$rc_dir"
+	load-rc-dir $rc_dir
 
 	fpath=(${fpath:#$boot_dir})
 	unfunction $boot_functions
-} "$@"
+} $@

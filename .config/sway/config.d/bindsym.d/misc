@@ -1,0 +1,10 @@
+bindsym $mod+Alt+m mode "misc"
+mode "misc" {
+    bindsym Escape  $break
+    bindsym z       exec "sleep 3; zzz";                            $break
+    bindsym b       exec "bluetooth-reset && notify-moment reset";  $break
+    bindsym m       exec "amute && notify-moment muted";            $break
+    bindsym u       exec "aunmute && notify-moment unmuted";        $break
+    bindsym d       exec "makoctl dismiss --all";                   $break
+    bindsym s       exec "systemctl suspend";                       $break
+}

@@ -1,0 +1,9 @@
+function overflow-message() {
+	if (( LISTMAX == 0 )) &&
+		 (( compstate[list_lines] + BUFFERLINES > LINES )); then
+		compstate[list]=''
+		zle -M "$compstate[nmatches] matches."
+	fi
+	comppostfuncs+=overflow-message
+}
+comppostfuncs+=overflow-message

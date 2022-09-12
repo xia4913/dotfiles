@@ -1,0 +1,11 @@
+duration=${1:-60}
+if (( # > 1 )); then
+	command=$@[2,-1]
+else
+	command=date
+fi
+
+while :; do
+	${=command}
+	sleep $duration
+done

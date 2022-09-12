@@ -1,0 +1,2 @@
+readonly local input=$(tr '\n' ' ')
+print -z "$@ $input"

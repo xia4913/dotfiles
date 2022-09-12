@@ -1,0 +1,21 @@
+zmodload zsh/complist
+
+#setopt auto_list
+#setopt auto_menu
+#setopt menu_complete
+
+#setopt list_packed
+#setopt list_rows_first
+#setopt list_types
+
+zstyle ':completion:*:default' menu select		# search manually whth ^s
+
+bindkey '\e[Z' reverse-menu-complete			# shift+tab
+bindkey '^[^i' reverse-menu-complete
+
+bindkey -M menuselect 'm'   accept-and-hold
+#bindkey -M menuselect '+'   accept-and-hold
+bindkey -M menuselect '+'   accept-and-menu-complete
+#bindkey -M menuselect '^['  reverse-menu-complete
+bindkey -M menuselect '/'   accept-and-infer-next-history
+bindkey -M menuselect '^j'  accept-and-infer-next-history-1

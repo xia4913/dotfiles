@@ -1,0 +1,16 @@
+setopt local_options extended_glob
+
+compctl -l '' x new-window
+
+if autoload -Uz compinit; then
+	compinit -u
+
+	local file=
+	for file in $(files-in-dir $ZDOTDIR/functions/completions); do
+		local n=${file#*/_}
+		compdef _$n $n
+	done
+
+	compdef dotfiles=git
+	compdef dot=dotfiles
+fi

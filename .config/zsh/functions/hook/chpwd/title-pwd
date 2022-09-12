@@ -1,0 +1,5 @@
+local s=$(print -D "$(pwd-info)")
+if [[ -n $DOAS_USER ]] || [[ -n $SUDO_USER ]]; then
+	s=$USER' '$s
+fi
+term-title $term_title' '$s

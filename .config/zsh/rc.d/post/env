@@ -1,0 +1,6 @@
+if [[ -n $DOAS_USER ]] || [[ -n $SUDO_USER ]]; then
+	readonly local home=~$USER
+	if [[ -d $home ]]; then
+		HOME=$home
+	fi
+fi

@@ -1,0 +1,4 @@
+if [[ ${1%%$'\n'} =~ '^ *$' ]]; then
+    jobs
+    #show-pwd
+fi

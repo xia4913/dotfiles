@@ -1,0 +1,16 @@
+
+local delta
+local -A matched_words
+autoload -Uz match-words-by-style
+match-words-by-style -w unspecified -C ' |/.'
+if [[ -z $matched_words[ws-before-cursor] ]]; then
+    delta=${#matched_words[word-before-cursor]}
+    (( CURSOR -= delta ))
+fi
+LBUFFER+={
+if (( $delta )); then
+    (( CURSOR += delta ))
+fi
+
+LBUFFER+=,
+RBUFFER=}$RBUFFER

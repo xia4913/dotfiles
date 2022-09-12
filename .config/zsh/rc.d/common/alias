@@ -1,0 +1,23 @@
+add-zsh-hook preexec show-expanded-alias
+
+disable r
+
+alias j=jobs
+alias cd..='cd ..'
+alias cd-='cd -'
+alias p1='print -l'
+alias pz='print -z'
+
+alias cp='cp -ip'
+alias mv='mv -i'
+
+alias -g X='| xargs'
+
+# local -A pair=(doas sudo)
+# local name
+# for name in ${(k)pair}; do
+# 	local -a alt=(${(z)pair[$name]})
+# 	if (( ! $+commands[$name] && $+commands[$alt[1]] )); then
+# 		alias $name="$alt"
+# 	fi
+# done

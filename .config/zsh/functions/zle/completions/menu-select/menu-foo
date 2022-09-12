@@ -1,0 +1,18 @@
+##if [[ $foo ]]; then
+## if false; then
+##if [[ -n "$MENUMODE" ]]; then
+##echo $compstate[insert]
+#if [[ -n "$compstate" ]]; then
+##zle expand-or-complete
+	#zle menu-complete
+#else
+	##zle expand-or-complete
+	##zle menu-expand-or-complete
+	#zle accept-and-infer-next-history
+	#zle complete-word
+#fi
+
+#RPROMPT=$compstate[vared]
+#zle complete-word
+echo $MENUMODE
+#zle forward-char

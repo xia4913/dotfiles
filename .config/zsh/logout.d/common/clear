@@ -1,0 +1,15 @@
+() {
+	readonly local tty_short=${(%)${:-%y}}
+	case $tty_short in
+	ttyp*|pt*)
+		;;
+	console|ttyE?|ttyv?|tty?)
+		if (( $+commands[clear] )); then
+			clear
+		fi
+		;;
+	*)
+		echo unknown tty: $tty_short $TTY >&2
+		;;
+	esac
+}

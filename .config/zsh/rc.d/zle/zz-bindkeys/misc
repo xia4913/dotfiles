@@ -1,0 +1,12 @@
+bindkey '^[.' insert-last-word-with-space
+bindkey '^[,' up-history-without-last-word
+
+bindkey '{{' insert-braces
+bindkey '}}' insert-braces-back
+
+bindkey '^[ ' just-one-space
+bindkey '^x^y' insert-x-paste-quoted
+#bindkey '~~' insert-home-directory
+#bindkey '``' insert-home-directory
+#bindkey '...' insert-parent-directory
+bindkey '..' insert-parent-directory

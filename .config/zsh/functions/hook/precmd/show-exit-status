@@ -1,0 +1,4 @@
+readonly local r=$?
+if (( r > 0 )); then
+	show-error "%F{red}returned $r exit status%f"
+fi

@@ -1,0 +1,7 @@
+zle forward-char -n 5
+#if (( compstate[nmatches] = 1 )); then
+#    accept-line
+#else
+#    accept-and-infer-next-history
+#fi
+return 0

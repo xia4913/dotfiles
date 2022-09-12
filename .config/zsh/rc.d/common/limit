@@ -1,0 +1,6 @@
+case $OSTYPE in
+msys|cygwin)
+	;;
+*)
+	limit coredumpsize 0
+esac

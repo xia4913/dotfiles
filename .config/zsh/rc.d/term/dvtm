@@ -1,0 +1,1 @@
+alias man='dvtm-new-window -0 -- env LESS=$LESS_PAGING man'

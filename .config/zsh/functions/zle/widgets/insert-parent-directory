@@ -1,0 +1,8 @@
+local is_dir=false
+if is-beginning-of-word || [[ $LBUFFER = */ ]]; then
+    is_dir=true
+fi
+LBUFFER+=..
+if [[ $is_dir = true ]]; then
+	LBUFFER+=/
+fi

@@ -1,0 +1,4 @@
+unfunction $0
+ASDF_DIR=/opt/asdf-vm
+. $ASDF_DIR/asdf.sh
+$0 $@

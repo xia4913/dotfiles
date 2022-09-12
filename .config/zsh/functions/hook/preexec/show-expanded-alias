@@ -1,0 +1,7 @@
+normalize() {
+    echo ${1:gs/ //:gs/;//}
+}
+
+if [[ $(normalize $1) != $(normalize $2) ]]; then
+	show-info "+ $2"
+fi

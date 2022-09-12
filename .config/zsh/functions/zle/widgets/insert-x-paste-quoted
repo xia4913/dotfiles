@@ -1,0 +1,4 @@
+local s=$(x-paste | to-space)
+if [[ -n $s ]]; then
+	LBUFFER+=$(printf %q $s)' '
+fi

@@ -1,0 +1,6 @@
+local dir=$(top-dir $@)
+if [[ -z $dir ]]; then
+	echo "$cookies not found at parent directories." >&2
+	return 1
+fi
+cd $dir

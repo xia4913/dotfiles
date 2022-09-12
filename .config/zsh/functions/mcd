@@ -1,0 +1,6 @@
+# same name command exists in mtools
+readonly local dir=$1
+if ! [[ -d $dir ]]; then
+    mkdir -pv $dir
+fi
+cd $dir

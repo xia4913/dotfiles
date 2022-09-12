@@ -1,0 +1,3 @@
+if ! [[ $1.zwc -nt $1 ]]; then
+    zcompile $file
+fi

@@ -1,0 +1,3 @@
+workspace 3; exec chrome
+workspace 2; exec firefox-developer
+workspace 1; exec '.zellij'; exec firefox-nightly

@@ -1,0 +1,4 @@
+export SYSTEMD_PAGER=less
+export SYSTEMD_LESS=$LESS
+unfunction $0
+command $0 $@

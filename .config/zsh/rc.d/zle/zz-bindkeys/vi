@@ -1,0 +1,7 @@
+bindkey -r '^V'
+bindkey '^V^V' vi-quoted-insert 
+bindkey '^Vr' vi-replace-chars
+bindkey '^V%' vi-match-braket
+bindkey '^Vv' vi-cmd-mode
+
+bindkey -M vicmd '^[' vi-insert

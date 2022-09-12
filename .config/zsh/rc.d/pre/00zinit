@@ -1,0 +1,19 @@
+readonly local zinit_dir=$ZDOTDIR/.zinit
+local zinit_bin=
+for zinit_bin in /usr/share/zinit ~/lib/zsh/zinit; do
+    if [[ -d $zinit_bin ]]; then
+        . $zinit_bin/zinit.zsh
+        break
+    fi
+done
+load-rc $(files-in-dir $ZDOTDIR/.zinit/rc.d)
+
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+local k= v=
+alias | while IFS== read -r k v; do
+    if [[ $v = zinit ]]; then
+        unalias $k
+    fi
+done
