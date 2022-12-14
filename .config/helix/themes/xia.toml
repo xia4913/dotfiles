@@ -17,7 +17,7 @@
 # "string.special.path" = "#59dcb7"
 # "string.special.url" = "#59dcb7"
 # "string.special.symbol" = "#59dcb7"
-"comment" = "dark"
+# "comment" = { modifiers = ["dim"] }
 # "comment.line" = "#627d9d"
 # "comment.block" = "#627d9d"
 # "comment.block.documentation" = "comment"
@@ -59,13 +59,16 @@
 "module" = "#d32c5d"
 
 "ui.background" = {}
-# "ui.cursor" = { bg = "gray" }
-"ui.cursor" = { bg = "gray" }
+
 "ui.cursor.insert" = { fg = "black", bg = "white" }
-"ui.cursor.select" = { bg = "red" }
 "ui.cursor.match" = { fg = "red" }
-# "ui.cursor.primary" = { modifiers = ["reversed"] }
-# "ui.cursor.primary" = { bg = "gray" }
+"ui.cursor.primary" = { modifiers = ["reversed"] }
+"ui.cursor.select" = { modifiers = ["reversed", "dim"] }
+"ui.cursor" = { modifiers = ["reversed", "dim"] }
+
+"ui.selection" = { bg = "selection" }
+# "ui.selection.primary" = { bg = "selection", modifiers = ["bold"] }
+
 "ui.linenr" = { fg = "gray", modifiers = ["dim"] }
 "ui.linenr.selected" = { fg = "lilac" }
 "ui.statusline" = { fg = "lilac", bg = "revolver" }
@@ -82,10 +85,8 @@
 "ui.menu" = { fg = "gray" }
 "ui.menu.selected" = { fg = "cyan" }
 # "ui.selection" = { bg = "revolver", modifiers = ["dim"] }
-# "ui.selection" = { bg = "dark-gray", modifiers = ["dim"] }
-"ui.selection" = { bg = "dim-gray" }
-# "ui.selection.primary" = { bg = "revolver" }
-"ui.selection.primary" = { bg = "dark-gray" }
+
+"ui.virtual.whitespace" = { fg = "dim-gray" }
 
 warning = { fg = "red", modifiers = ["dim"] }
 error = { fg = "red" }
@@ -109,6 +110,8 @@ white      = "#bbbbbb"
 
 dark-gray  = "#444444"
 dim-gray   = "#222222"
+
+selection  = "#333366"
 
 revolver   = "#281733"
 lilac      = "#dbbfef"

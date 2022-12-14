@@ -1,11 +1,24 @@
-LBUFFER+={
-
-local -A matched_words
-autoload -Uz match-words-by-style
-match-words-by-style -w unspecified -C ' |/.'
-if [[ -z $matched_words[ws-after-cursor] ]]; then
-    (( CURSOR += ${#matched_words[word-after-cursor]} ))
+local left right cursor
+if (( REGION_ACTIVE && MARK != CURSOR )); then
+    if (( CURSOR < MARK )); then
+        left=$(( $CURSOR + 1 )) right=$(( $MARK + 1 ))
+    else
+        left=$MARK right=$(( $CURSOR + 1 ))
+    fi
+    zle deactivate-region
+else
+    local -A matched_words
+    autoload -Uz match-words-by-style
+    match-words-by-style -w unspecified -C ' |/.'
+    if [[ -z $matched_words[ws-after-cursor] ]]; then
+        right=$(( CURSOR + ${#matched_words[word-after-cursor]} ))
+    else
+        right=$CURSOR
+    fi
+    left=$CURSOR
 fi
-
+CURSOR=$left
+LBUFFER+={
+CURSOR=$(( $right + 1 ))
 LBUFFER+=,
 RBUFFER=}$RBUFFER

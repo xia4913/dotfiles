@@ -15,16 +15,16 @@ bindsym $mod+Shift+Space            floating toggle
 bindsym $mod+m                      fullscreen toggle
 bindsym $mod+Shift+x                exec "sway-fill-floatings"
 
-bindsym $mod+$up                    exec "sway-focus-direction up"
-bindsym $mod+$down                  exec "sway-focus-direction down"
-bindsym $mod+$left                  exec "sway-focus-direction left"
-bindsym $mod+$right                 exec "sway-focus-direction right"
+bindsym $mod+$up                    exec "sway-overfocus split-uw float-uw"
+bindsym $mod+$down                  exec "sway-overfocus split-dw float-dw"
+bindsym $mod+$left                  exec "sway-overfocus split-lw float-lw"
+bindsym $mod+$right                 exec "sway-overfocus split-rw float-rw"
 
 bindsym $mod+h                      exec "sway-focus-back-and-forth"
 bindsym $mod+Shift+h                exec "sway-focus-back-and-forth 2"
 
-bindsym $mod+r                      exec "sway-focus-rotate next"
-bindsym $mod+Shift+r                exec "sway-focus-rotate prev"
+bindsym $mod+r                      exec "sway-overfocus float-rw split-rw split-dw"
+bindsym $mod+Shift+r                exec "sway-overfocus float-lw split-lw split-uw"
 
 bindsym $mod+Shift+$up              exec "sway-move-direction up"
 bindsym $mod+Shift+$down            exec "sway-move-direction down"
@@ -36,10 +36,10 @@ bindsym $mod+Shift+Control+$down    exec "sway-swap-direction down"
 bindsym $mod+Shift+Control+$left    exec "sway-swap-direction left"
 bindsym $mod+Shift+Control+$right   exec "sway-swap-direction right"
 
-bindsym $mod+Alt+$up                focus up
-bindsym $mod+Alt+$down              focus down
-bindsym $mod+Alt+$left              focus left
-bindsym $mod+Alt+$right             focus right
+bindsym $mod+Alt+$up                exec "sway-overfocus group-uw"
+bindsym $mod+Alt+$down              exec "sway-overfocus group-dw"
+bindsym $mod+Alt+$left              exec "sway-overfocus group-lw"
+bindsym $mod+Alt+$right             exec "sway-overfocus group-rw"
 
 bindsym $mod+Alt+Shift+$up          exec "sway-move-direction-siblings up"
 bindsym $mod+Alt+Shift+$down        exec "sway-move-direction-siblings down"

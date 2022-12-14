@@ -3,7 +3,6 @@ add-zsh-hook preexec show-expanded-alias
 disable r
 
 alias j=jobs
-alias cd..='cd ..'
 alias cd-='cd -'
 alias p1='print -l'
 alias pz='print -z'

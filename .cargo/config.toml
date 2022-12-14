@@ -2,5 +2,4 @@
 rustc-wrapper = "/usr/bin/sccache"
 
 [alias]
-gen = "generate default --name"
 w = "watch -x test -x run"

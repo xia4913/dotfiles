@@ -2,5 +2,9 @@
 .obsolete/
 .local/
 
+target/
+target-tmp
+
 .env*
+*.orig
 *.[0-9]

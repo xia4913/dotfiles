@@ -3,7 +3,10 @@
 	readonly local boot_dir=$ZDOTDIR/boot.d
 	readonly local boot_functions=($~boot_dir/*(.:t))
 
-	path=(~/bin/scripting $path)	# XXX
+	readonly local scripting=~/bin/scripting
+	if ! (( ${path[(I)$scripting]} )); then
+		path+=$scripting
+	fi
 
 	fpath+=$boot_dir
 	autoload -Uz $boot_functions

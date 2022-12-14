@@ -1,0 +1,10 @@
+[Unit]
+Description=syncronize Wayland clipboard 
+BindsTo=wayland-session.target
+
+[Service]
+Type=simple
+ExecStart=wl-paste -pw wl-copy
+
+[Install]
+WantedBy=wayland-session.target

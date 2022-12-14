@@ -10,4 +10,6 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' format '%B%F{yellow}[%d]%f%b'
 
 # exa default theme https://github.com/ogham/exa/blob/master/src/theme/default_theme.rs
-zstyle ':completion:*' list-colors 'di=34;1' ln=36 or=31
+zstyle ':completion:*' list-colors {di,tw,ow}='34;1' ln=36 pi=33 {bd,cd}='33;1' so='31;1' {ex,su,sg}='32;1' or=31
+
+zstyle ':completion:*:-command-:*' ignored-patterns 'cd-?*'
