@@ -9,7 +9,7 @@ echo _git-* | grep -v '\.zwc$' | while read file; do
     rm "$file"
 done
 for target in ~/bin/git/git-*; do
-    command=$(progname "$target")
+    command=$(basename "$target")
     func="_${command}"
     if [ -f "$func" ]; then
         continue

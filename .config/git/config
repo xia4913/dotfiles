@@ -5,5 +5,6 @@
 [include]
 	path = config.d/alias
 	path = config.d/delta
-	path = config.d/user
+	path = config.d/ghq
 	path = config.d/github
+	path = config.d/user

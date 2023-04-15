@@ -1,2 +1,0 @@
-readonly local dir=$1
-(mcd $1; zsh); show-pwd; jobs

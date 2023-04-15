@@ -1,4 +1,4 @@
-add-zsh-hook preexec show-expanded-alias
+# add-zsh-hook preexec show-expanded-alias
 
 disable r
 
@@ -20,3 +20,8 @@ alias -g X='| xargs'
 # 		alias $name="$alt"
 # 	fi
 # done
+
+alias zl=zellij-last-output
+alias zl1='zl | tail -1'
+
+alias zs=zoxide-search

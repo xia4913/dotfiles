@@ -1,7 +1,8 @@
 unset LANG
 if [ -n "$TERM" ] && [ "$TERM" != dumb ]; then
-	SHELL=$(command -v zsh)
-	if [ -x "$SHELL" ]; then
-		exec "$SHELL" -l
+	zsh=$(command -v zsh)
+	if [ -x "$zsh" ]; then
+		SHELL=$zsh
+		exec "$zsh" -l
 	fi
 fi

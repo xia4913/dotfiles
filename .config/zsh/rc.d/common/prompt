@@ -1,6 +1,6 @@
 readonly local hi=%F{102}
 readonly local dim=%B%F{008}
-readonly local normal=%f%b
+readonly local normal=%f%k%b
 readonly local prompt_indent=${(r:$(($SHLVL - 1)):: :)}
 local user=%n
 if [[ -n $DOAS_USER ]] || [[ -n $SUDO_USER ]] || [[ ! -O $ZDOTDIR ]]; then
@@ -18,8 +18,8 @@ readonly local char=%(!.#.$)
 PROMPT=$prompt_indent$dim$main$char$normal' '
 RPROMPT=$dim'<%v'$normal
 
-autoload promptnl
-add-zsh-hook precmd promptnl
+setopt prompt_cr
+PROMPT_EOL_MARK=$dim~$normal
 
 #setopt PRINT_EXIT_VALUE
 add-zsh-hook precmd show-exit-status

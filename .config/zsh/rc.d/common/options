@@ -20,9 +20,6 @@ unsetopt flow_control
 setopt ignore_eof
 setopt rm_star_silent
 
-## Prompting
-unsetopt prompt_cr
-
 ## Scripts and Functions
 ## Shell Emulation
 ## Shell State
