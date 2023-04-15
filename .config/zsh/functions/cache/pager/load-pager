@@ -1,0 +1,12 @@
+if [[ -n $INSIDE_EMACS ]] && [[ $TERM = dumb ]]; then
+	# set by elisp
+	return
+fi
+
+readonly local cache=$(pager-cache)
+if [[ ! -f $cache ]]; then
+	update-pager-cache
+fi
+if [[ -f $cache ]]; then
+	. $cache
+fi

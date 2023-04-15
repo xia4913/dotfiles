@@ -1,0 +1,4 @@
+readonly local cache=$(path-cache)
+if [[ -f $cache ]]; then
+	p $cache
+fi

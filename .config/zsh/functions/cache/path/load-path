@@ -1,0 +1,7 @@
+readonly local cache=$(path-cache)
+if [[ ! -f $cache ]]; then
+	update-path-cache
+fi
+if [[ -f $cache ]]; then
+	. $cache
+fi

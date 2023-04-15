@@ -1,0 +1,12 @@
+readonly local main=env-config
+if ! is-command-available $main; then
+	echo "$main not found."
+	return
+fi
+
+readonly local cache=$(path-cache)
+readonly local dir=$(dirname $cache)
+if [[ ! -d $dir ]]; then
+	dumb mkdir -p $dir || return
+fi
+$main path -z >|$cache
