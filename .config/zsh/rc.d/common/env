@@ -1,6 +1,13 @@
 if [[ -n $TMPDIR ]] && [[ ! -w $TMPDIR ]]; then
 	unset TMPDIR
 fi
+if [[ -z $TMPDIR ]]; then
+	export TMPDIR=/tmp/user-$UID
+	if ! [[ -d $TMPDIR ]]; then
+		mkdir -p $TMPDIR
+		chmod og= $TMPDIR
+	fi
+fi
 
 HISTSIZE=1000
 LISTMAX=0

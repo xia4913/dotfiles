@@ -1,13 +1,13 @@
 # show selected keymap in right prompt 
 function zle-keymap-select zle-line-init zle-line-finish {
-    local label
+	local label
 	if [[ $KEYMAP != main ]]; then
 		label=$KEYMAP
 	fi
-    if [[ $label != $psvar[1] ]]; then
+	if [[ $psvar[1] != $label ]]; then
 		psvar[1]=$label
-    	zle reset-prompt
-    fi
+		zle reset-prompt
+	fi
 }
 zle -N zle-keymap-select
 zle -N zle-line-init

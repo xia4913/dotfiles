@@ -5,11 +5,8 @@ export HOST
 export BLOCKSIZE=k
 export TIME_STYLE=long-iso
 export XDG_CONFIG_HOME=~/.config
-#export CPROTO=-sf2
-#export PERL_BADLANG=0
-#export GEM_HOME=~/lib/ruby/gems
 
-export HISTORY_DIR=~/tmp/history
+export HISTORY_DIR=$TMPDIR/history
 export RLWRAP_HOME=$HISTORY_DIR
 
 if [[ -n $XDG_CACHE_HOME ]]; then
