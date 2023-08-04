@@ -1,7 +1,8 @@
 theme = "xia"
 
 [editor]
-# rulers = [72]
+rulers = [72]
+text-width = 78
 mouse = false
 [editor.cursor-shape]
 insert = "bar"
@@ -11,6 +12,12 @@ newline = "all"
 [editor.whitespace.characters]
 # tabpad = "_"
 newline = "↵"
+[editor.soft-wrap]
+enable = true
+wrap-at-text-width = true
+wrap-indicator = "→ "
+# wrap-indicator = ""
+# max-indent-retain = 0
 
 # [lsp]
 # display-messages = true

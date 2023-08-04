@@ -1,5 +1,5 @@
 bindkey '^[.' insert-last-word-with-space
-bindkey '^[,' up-history-without-last-word
+bindkey '^[,' insert-positional-word
 
 bindkey '{{' insert-braces
 bindkey '}}' insert-braces-back

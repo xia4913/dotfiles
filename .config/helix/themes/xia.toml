@@ -86,7 +86,9 @@
 "ui.menu.selected" = { fg = "cyan" }
 # "ui.selection" = { bg = "revolver", modifiers = ["dim"] }
 
+"ui.virtual.ruler" = { bg = "dark-revolver" }
 "ui.virtual.whitespace" = { fg = "dim-gray" }
+"ui.virtual.wrap" = { fg = "dim-gray" }
 
 warning = { fg = "red", modifiers = ["dim"] }
 error = { fg = "red" }
@@ -96,32 +98,33 @@ diagnostic = "gray"
 
 
 [palette]
-black      = "#112222"
-red        = "#ee6677"
-green      = "#99dd77"
-yellow     = "#cc9966"
-blue       = "#66aaee"
-magenta    = "#cc77dd"
-cyan       = "#55bbcc"
-gray       = "#777777"
+black         = "#112222"
+red           = "#ee6677"
+green         = "#99dd77"
+yellow        = "#cc9966"
+blue          = "#66aaee"
+magenta       = "#cc77dd"
+cyan          = "#55bbcc"
+gray          = "#777777"
 
-light-gray = "#999999"
-white      = "#bbbbbb"
+light-gray    = "#999999"
+white         = "#bbbbbb"
 
-dark-gray  = "#444444"
-dim-gray   = "#222222"
+dark-gray     = "#444444"
+dim-gray      = "#222222"
 
-selection  = "#333366"
+selection     = "#333366"
 
-revolver   = "#281733"
-lilac      = "#dbbfef"
+dark-revolver = "#0c0710"
+revolver      = "#281733"
+lilac         = "#dbbfef"
 
-text       = "#bbbbbb"
-dark       = "#666666"
-keyword    = "#bbbb77"
-numeric    = "#ddbbdd"
-string     = "#99bbaa"
-type       = "#aaaadd"
-operator   = "#ee9999"
+text          = "#bbbbbb"
+dark          = "#666666"
+keyword       = "#bbbb77"
+numeric       = "#ddbbdd"
+string        = "#99bbaa"
+type          = "#aaaadd"
+operator      = "#ee9999"
 
-debug      = "#ff0000"
+debug         = "#ff0000"

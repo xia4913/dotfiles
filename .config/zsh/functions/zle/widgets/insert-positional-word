@@ -1,0 +1,14 @@
+local nth=${NUMERIC}
+if [[ -z $nth ]]; then
+	local cur=(${(z)LBUFFER})
+	nth=$(( $#cur + 1 ))
+fi
+
+local prev=($(history -n -1))
+local word=$prev[$nth]
+if [[ -n $word ]]; then
+	if ! is-beginning-of-word; then
+		LBUFFER+=' '
+	fi
+	LBUFFER+="$word "
+fi

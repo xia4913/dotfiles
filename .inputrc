@@ -1,0 +1,10 @@
+"\ep": history-search-backward
+"\en": history-search-forward
+"\eh": backward-kill-word
+"\ed": kill-word
+"\e[H": beginning-of-line
+"\e[F": end-of-line
+"\C-r": revert-line		# ???
+
+"\e\C-b": backward-word
+"\e\C-f": forward-word

@@ -2,9 +2,10 @@
 	defaultBranch = main
 [color]
 	ui = always
+[rebase]
+	autoSquash = true
 [include]
 	path = config.d/alias
 	path = config.d/delta
-	path = config.d/ghq
 	path = config.d/github
 	path = config.d/user
