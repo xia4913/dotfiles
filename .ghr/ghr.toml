@@ -1,0 +1,4 @@
+[profiles.default]
+
+[[rules]]
+profile.name = "default"

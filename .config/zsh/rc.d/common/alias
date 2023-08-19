@@ -23,5 +23,3 @@ alias -g X='| xargs'
 
 alias zl=zellij-last-output
 alias zl1='zl | tail -1'
-
-alias zs=zoxide-search

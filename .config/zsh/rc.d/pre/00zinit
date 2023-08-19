@@ -1,8 +1,8 @@
-readonly local zinit_dir=$ZDOTDIR/.zinit
-local zinit_bin=
-for zinit_bin in /usr/share/zinit ~/lib/zsh/zinit; do
-    if [[ -d $zinit_bin ]]; then
-        . $zinit_bin/zinit.zsh
+local zinit_dir=
+for zinit_dir in /usr/share/zinit ~/lib/zsh/zinit; do
+    local f=$zinit_dir/zinit.zsh
+    if [[ -f $f ]]; then
+        . $f
         break
     fi
 done

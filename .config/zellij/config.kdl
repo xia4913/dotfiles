@@ -1,28 +1,32 @@
 keybinds clear-defaults=true {
+    shared {
+        bind "Ctrl g" { SwitchToMode "normal"; }
+    }
+    shared_except "locked" "entersearch" "renametab" {
+        bind "Esc" "Enter" "Space" { SwitchToMode "locked"; }
+    }
     normal {
         bind "g" { Write 7; SwitchToMode "locked"; } // Ctrl-g ASCII code.
-        bind "Esc" "Enter" "Space" { SwitchToMode "locked"; }
         bind "c" { NewPane "Down"; SwitchToMode "locked"; }
-        bind "C" { Run "zellij-new-pane"; }
         bind "t" { NewTab; SwitchToMode "locked"; }
-        // bind "T" { NewTab; SwitchToMode "locked"; }
-        bind "R" { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "T" { ToggleTab; }
+        bind "R" { SwitchToMode "renametab"; TabNameInput 0; }
         bind "." {
             Run "zellij-rename-tab-pwd" {
                 close_on_exit true
-            }
+            };
         }
-        bind "Ctrl p" "Up" { FocusPreviousPane; SwitchToMode "locked"; }
-        bind "Ctrl n" "Down" { FocusNextPane; SwitchToMode "locked"; }
-        bind "Ctrl b" "Left" { MoveFocusOrTab "Left"; SwitchToMode "locked"; }
+        bind "Ctrl p" "Up"    { FocusPreviousPane;      SwitchToMode "locked"; }
+        bind "Ctrl n" "Down"  { FocusNextPane;          SwitchToMode "locked"; }
+        bind "Ctrl b" "Left"  { MoveFocusOrTab "Left";  SwitchToMode "locked"; }
         bind "Ctrl f" "Right" { MoveFocusOrTab "Right"; SwitchToMode "locked"; }
-        bind "P" { MovePane "Up"; SwitchToMode "locked"; }
-        bind "N" { MovePane "Down"; SwitchToMode "locked"; }
-        bind "B" { MovePane "Left"; SwitchToMode "locked"; }
+        bind "P" { MovePane "Up";    SwitchToMode "locked"; }
+        bind "N" { MovePane "Down";  SwitchToMode "locked"; }
+        bind "B" { MovePane "Left";  SwitchToMode "locked"; }
         bind "F" { MovePane "Right"; SwitchToMode "locked"; }
-        bind "m" { ToggleFocusFullscreen; SwitchToMode "locked"; }
-        bind "Space" { ToggleFloatingPanes; SwitchToMode "locked"; }
-        bind "f" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
+        bind "m"     { ToggleFocusFullscreen;     SwitchToMode "locked"; }
+        bind "Space" { ToggleFloatingPanes;       SwitchToMode "locked"; }
+        bind "f"     { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
         bind "=" { Resize "Increase"; }
         bind "+" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
@@ -35,73 +39,63 @@ keybinds clear-defaults=true {
         bind "7" { GoToTab 7; SwitchToMode "locked"; }
         bind "8" { GoToTab 8; SwitchToMode "locked"; }
         bind "9" { GoToTab 9; SwitchToMode "locked"; }
-        bind "Alt p" { SwitchToMode "pane"; }
-        bind "Alt t" { SwitchToMode "tab"; }
-        bind "Alt r" { SwitchToMode "resize"; }
-        bind "Alt S" "PageUp" { SwitchToMode "scroll"; }
-        bind "Alt s" { SwitchToMode "session"; }
-        bind "Alt m" { SwitchToMode "move"; }
+        bind "Alt p"  { SwitchToMode "pane"; }
+        bind "Alt t"  { SwitchToMode "tab"; }
+        bind "PageUp" { SwitchToMode "scroll"; }
+        bind "/"      { SwitchToMode "entersearch"; SearchInput 0; }
+        bind "Alt s"  { SwitchToMode "session"; }
         bind "X" { CloseFocus; }
     }
     locked {
-        bind "Ctrl g" { SwitchToMode "normal"; }
+    }
+    resize {
     }
     pane {
-        bind "Ctrl g" { SwitchToMode "normal"; }
-        bind "Esc" "Enter" "Space" { SwitchToMode "locked"; }
         bind "d" { NewPane "Down"; }
         bind "r" { NewPane "Right"; }
-        bind "X" { CloseFocus; }
+        bind "R" { SwitchToMode "renamepane"; PaneNameInput 0; }
         bind "Z" { TogglePaneFrames; }
     }
+    move {
+    }
     tab {
-        bind "Ctrl g" { SwitchToMode "normal"; }
-        bind "Esc" "Enter" "Space" { SwitchToMode "locked"; }
-        bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
-        bind "Ctrl b" "Left" { GoToPreviousTab; }
+        bind "Ctrl b" "Left"  { GoToPreviousTab; }
         bind "Ctrl f" "Right" { GoToNextTab; }
-        bind "n" { NewTab; }
         bind "X" { CloseTab; }
         bind "S" { ToggleActiveSyncTab; }
     }
-    resize {
-        bind "Ctrl g" { SwitchToMode "normal"; }
-        bind "Esc" "Enter" "Space" { SwitchToMode "locked"; }
-        bind "=" { Resize "Increase"; }
-        bind "Alt +" { Resize "Increase"; }
-        bind "-" { Resize "Decrease"; }
-    }
-    move {
-        bind "Ctrl g" { SwitchToMode "normal"; }
-        bind "Esc" "Enter" "Space" { SwitchToMode "locked"; }
-        bind "n" "Tab" { MovePane; }
-        bind "Ctrl p" "Up" { MovePane "Up"; }
-        bind "Ctrl n" "Down" { MovePane "Down"; }
-        bind "Ctrl b" "Left" { MovePane "Left"; }
-        bind "Ctrl f" "Right" { MovePane "Right"; }
-    }
     scroll {
         bind "e" { EditScrollback; SwitchToMode "normal"; }
-        bind "Ctrl g" { ScrollToBottom; SwitchToMode "normal"; }
-        bind "Esc" "Enter" "Space" { SwitchToMode "locked"; }
-        bind "Ctrl r" "Ctrl s" "Space" "Enter" { SwitchToMode "normal"; }
-        bind "Ctrl n" "Down" { ScrollDown; }
-        bind "Ctrl p" "Up" { ScrollUp; }
-        bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
-        bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
-        bind "d" { HalfPageScrollDown; }
-        bind "u" { HalfPageScrollUp; }
+    }
+    search {
+        bind "n" { Search "down"; }
+        bind "p" { Search "up"; }
+    }
+    shared_among "scroll" "search" {
+        bind "Ctrl n" "Down"    { ScrollDown; }
+        bind "Ctrl p" "Up"      { ScrollUp; }
+        bind "PageDown" "Space" { PageScrollDown; }
+        bind "PageUp"           { PageScrollUp; }
+        bind "d"                { HalfPageScrollDown; }
+        bind "u"                { HalfPageScrollUp; }
+        bind "/" { SwitchToMode "entersearch"; SearchInput 0; }
+    }
+    entersearch {
+        bind "Enter" { SwitchToMode "Search"; }
+        bind "Esc"   { SwitchToMode "Scroll"; }
+    }
+    shared_among "renametab" "renamepane" {
+        bind "Enter" { SwitchToMode "locked"; }
+    }
+    renametab {
+        bind "Esc" { UndoRenameTab; SwitchToMode "locked"; }
+    }
+    renamepane {
+        bind "Esc" { UndoRenamePane; SwitchToMode "locked"; }
     }
     session {
-        bind "Ctrl g" { SwitchToMode "normal"; }
-        bind "Esc" "Enter" "Space" { SwitchToMode "locked"; }
-        bind "q" { Quit; }
+        bind "Q" { Quit; }
         bind "d" { Detach; }
-    }
-    RenameTab {
-        bind "Ctrl g" { SwitchToMode "normal"; }
-        bind "Enter" { SwitchToMode "locked"; }
-        bind "Esc" { UndoRenameTab; SwitchToMode "locked"; }
     }
 }
 
@@ -131,6 +125,41 @@ keybinds clear-defaults=true {
 //   - false
 //
 pane_frames false
+
+// Define color themes for Zellij
+// For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
+// Once these themes are defined, one of them should to be selected in the "theme" section of this file
+//
+// themes {
+//     dracula {
+//         fg 248 248 242
+//         bg 40 42 54
+//         red 255 85 85
+//         green 80 250 123
+//         yellow 241 250 140
+//         blue 98 114 164
+//         magenta 255 121 198
+//         orange 255 184 108
+//         cyan 139 233 253
+//         black 0 0 0
+//         white 255 255 255
+//     }
+// }
+themes {
+    default {
+        fg 245
+        bg 238
+        black 16
+        red 88
+        green 70 130 180
+        yellow 0
+        blue 0
+        magenta 0
+        cyan 0
+        white 255
+        orange 166
+    }
+}
 
 // Choose the theme that is specified in the themes section.
 // Default: default
@@ -202,23 +231,8 @@ copy_command "wl-copy"                    // wayland
 
 // The folder in which Zellij will look for layouts
 //
-// layout_dir /path/to/my/layout_dir
+// layout_dir "/path/to/my/layout_dir"
 
 // The folder in which Zellij will look for themes
 //
 // theme_dir "/path/to/my/theme_dir"
-themes {
-    default {
-        fg 245
-        bg 238
-        black 16
-        red 88
-        green 70 130 180
-        yellow 0
-        blue 0
-        magenta 0
-        cyan 0
-        white 255
-        orange 166
-    }
-}

@@ -2,7 +2,12 @@ if [[ -n $TMPDIR ]] && [[ ! -w $TMPDIR ]]; then
 	unset TMPDIR
 fi
 if [[ -z $TMPDIR ]]; then
-	export TMPDIR=/tmp/user-$UID
+	if [[ -d ~/tmp ]]; then
+		TMPDIR=~/tmp/tmp
+	else
+		TMPDIR=/tmp/user-$UID
+	fi
+	export TMPDIR
 	if ! [[ -d $TMPDIR ]]; then
 		mkdir -p $TMPDIR
 		chmod og= $TMPDIR

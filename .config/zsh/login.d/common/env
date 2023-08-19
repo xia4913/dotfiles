@@ -5,10 +5,4 @@ export HOST
 export BLOCKSIZE=k
 export TIME_STYLE=long-iso
 export XDG_CONFIG_HOME=~/.config
-
-export HISTORY_DIR=$TMPDIR/history
-export RLWRAP_HOME=$HISTORY_DIR
-
-if [[ -n $XDG_CACHE_HOME ]]; then
-	export XDG_CACHE_HOME=~/.cache
-fi
+export RLWRAP_HOME=~/.history
