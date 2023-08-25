@@ -1,3 +1,1 @@
-dumb ~/bin/init-tmpfiles
 export TMPDIR=~/tmp/tmp
-export TMPPREFIX=$TMPDIR/zsh
