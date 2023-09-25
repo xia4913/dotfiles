@@ -2,6 +2,8 @@ bindkey '^P' up-line-or-history
 bindkey '^N' down-line-or-history
 bindkey '^[p' history-beginning-search-backward
 bindkey '^[n' history-beginning-search-forward
+bindkey '^R' history-fuzzy-finder-search
+bindkey -r '^N'
 
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line

@@ -1,11 +1,19 @@
+[core]
+	quotepath = false
 [init]
 	defaultBranch = main
-[color]
-	ui = always
+[fetch]
+	prune = true
+[push]
+	default = current
 [rebase]
 	autoSquash = true
+[color]
+	ui = always
 [include]
 	path = config.d/alias
 	path = config.d/delta
 	path = config.d/github
 	path = config.d/user
+[safe]
+	directory = /etc

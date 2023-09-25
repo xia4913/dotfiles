@@ -15,8 +15,7 @@ newline = "↵"
 [editor.soft-wrap]
 enable = true
 wrap-at-text-width = true
-wrap-indicator = "→ "
-# wrap-indicator = ""
+wrap-indicator = ""
 # max-indent-retain = 0
 
 # [lsp]

@@ -7,6 +7,12 @@ focus_wrapping      force
 font                xft:monospace Regular 10
 swaynag_command     "swaynag -f 24"
 
+input * repeat_delay 250
+input * repeat_rate 30
+
+seat * hide_cursor 8000
+seat * hide_cursor when-typing enable
+
 xwayland            enable
 
 set $dir ~/.config/sway
@@ -14,7 +20,6 @@ set $dir ~/.config/sway
 include config.d/bindsym
 include config.d/window
 include config.d/bar
-include config.d/default-apps
 
-exec $dir/bin/session
-#exec $dir/bin/default-apps
+exec ~/bin/wayland/sway/session
+exec ~/bin/wayland/default-apps

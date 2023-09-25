@@ -4,16 +4,17 @@ set $down  n
 set $left  b
 set $right f
 
-bindsym $mod+Return                 exec ".zellij"
+bindsym $mod+Return                 exec "zellij-term"
 bindsym $mod+Shift+Return           exec "term"
+bindsym $mod+Alt+Shift+Return       exec "command=foot term"
 
-bindsym $mod+Shift+q                kill
+bindsym $mod+Shift+x                kill
 
 floating_modifier                   $mod
 bindsym $mod+Space                  focus mode_toggle
 bindsym $mod+Shift+Space            floating toggle
 bindsym $mod+m                      fullscreen toggle
-bindsym $mod+Shift+x                exec "sway-fill-floatings"
+bindsym $mod+Shift+l                exec "sway-fill-floatings"
 
 bindsym $mod+$up                    exec "sway-overfocus split-uw float-uw"
 bindsym $mod+$down                  exec "sway-overfocus split-dw float-dw"

@@ -4,7 +4,8 @@ BindsTo=wayland-session.target
 
 [Service]
 Type=simple
-ExecStart=wl-paste -pw wl-copy
+# ExecStart=wl-paste -pw wl-copy
+ExecStart=wl-paste -pw wl-copy -f
 
 [Install]
 WantedBy=wayland-session.target

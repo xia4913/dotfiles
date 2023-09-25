@@ -1,7 +1,0 @@
-export SYSTEMD_PAGER=$PAGER
-export SYSTEMD_PAGERSECURE=true
-if [[ -n $LESS ]]; then
-	export SYSTEMD_LESS=$LESS
-fi
-unfunction $0
-command $0 $@

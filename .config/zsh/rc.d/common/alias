@@ -12,14 +12,5 @@ alias mv='mv -i'
 
 alias -g X='| xargs'
 
-# local -A pair=(doas sudo)
-# local name
-# for name in ${(k)pair}; do
-# 	local -a alt=(${(z)pair[$name]})
-# 	if (( ! $+commands[$name] && $+commands[$alt[1]] )); then
-# 		alias $name="$alt"
-# 	fi
-# done
-
 alias zl=zellij-last-output
 alias zl1='zl | tail -1'

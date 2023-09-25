@@ -1,21 +1,22 @@
 [alias]
 	b  = branch
 	co = checkout
-	d  = diff
 
-	s  = status -s
+	d  = diff
+	ds = d --staged
+
+	s  = status --short
 	ss = status-short-staged
 	sr = status-short-red
 
 	ls  = ls-files
 	lsu = ls --others --exclude-standard
 
-	l  = log-branch --oneline --max-count 10
+	l  = log --oneline --max-count 10
 	la = l --max-count -1
 	lg = la --graph --all
 
 	fixup  = commit --fixup
-	squash = commit --squash
 	amend  = commit --amend --no-edit
 
 	abort    = rebase --abort

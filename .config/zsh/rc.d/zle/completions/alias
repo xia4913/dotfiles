@@ -2,14 +2,24 @@ setopt local_options extended_glob
 
 compctl -l '' x new-window
 
-if autoload -Uz compinit; then
-	compinit -u
+autoload -Uz compinit
+compinit -u
 
-	local file=
-	for file in $(files-in-dir $ZDOTDIR/functions/completions); do
-		local n=${file#*/_}
-		compdef _$n $n
-	done
+local file=
+for file in $(files-in-dir $ZDOTDIR/functions/completions); do
+	local n=${file#*/_}
+	compdef _$n $n
+done
 
-	compdef dotfiles=git
-fi
+compdef dotfiles=git
+
+# wrapper commands
+local targets=(${${commands[(I)*-]}%-})
+zstyle ':completion:*:-command-:*' ignored-patterns ${(j:|:)targets}
+
+local i
+for i in $targets; do
+	if (($+_comps[$i])); then
+		compdef $i-=$i
+	fi
+done

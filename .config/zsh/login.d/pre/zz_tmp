@@ -1,1 +1,1 @@
-export TMPDIR=~/tmp/tmp
+export TMPDIR=$(realpath ~/tmp/tmp)

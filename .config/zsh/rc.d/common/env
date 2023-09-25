@@ -1,9 +1,9 @@
-if [[ -n $TMPDIR ]] && [[ ! -w $TMPDIR ]]; then
+if [[ -n $TMPDIR ]] && ! [[ -w $TMPDIR ]]; then
 	unset TMPDIR
 fi
 if [[ -z $TMPDIR ]]; then
 	if [[ -d ~/tmp ]]; then
-		TMPDIR=~/tmp/tmp
+		TMPDIR=$(realpath ~/tmp/tmp)
 	else
 		TMPDIR=/tmp/user-$UID
 	fi

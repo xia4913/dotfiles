@@ -4,6 +4,7 @@ BindsTo=graphical-session.target
 
 [Service]
 Type=simple
+ExecCondition=/bin/sh -c '[ -n "$WAYLAND_DISPLAY" ]'
 ExecStart=/usr/bin/fcitx5
 
 [Install]

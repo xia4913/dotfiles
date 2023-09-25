@@ -22,8 +22,8 @@ keybinds clear-defaults=true {
         bind "Ctrl f" "Right" { MoveFocusOrTab "Right"; SwitchToMode "locked"; }
         bind "P" { MovePane "Up";    SwitchToMode "locked"; }
         bind "N" { MovePane "Down";  SwitchToMode "locked"; }
-        bind "B" { MovePane "Left";  SwitchToMode "locked"; }
-        bind "F" { MovePane "Right"; SwitchToMode "locked"; }
+        bind "B" { BreakPaneLeft;  SwitchToMode "locked"; }
+        bind "F" { BreakPaneRight; SwitchToMode "locked"; }
         bind "m"     { ToggleFocusFullscreen;     SwitchToMode "locked"; }
         bind "Space" { ToggleFloatingPanes;       SwitchToMode "locked"; }
         bind "f"     { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
@@ -148,7 +148,7 @@ pane_frames false
 themes {
     default {
         fg 245
-        bg 238
+        bg 0
         black 16
         red 88
         green 70 130 180
@@ -236,3 +236,9 @@ copy_command "wl-copy"                    // wayland
 // The folder in which Zellij will look for themes
 //
 // theme_dir "/path/to/my/theme_dir"
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
