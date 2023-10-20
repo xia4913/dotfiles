@@ -1,0 +1,37 @@
+font:
+  normal:
+    family: "monospace"
+  size: 22
+  offset:
+    y: -6
+window:
+  opacity: 0.95
+colors:
+  primary:
+    background: "#000000"
+    foreground: "#dddddd"
+  normal:
+    black:   "#112222"
+    red:     "#ee6677"
+    green:   "#99dd77"
+    yellow:  "#cc9966"
+    blue:    "#66aaee"
+    magenta: "#cc77dd"
+    cyan:    "#55bbcc"
+    white:   "#bbbbbb"
+  bright:
+    black:   "#556666"
+    red:     "#ff6677"
+    green:   "#99ee77"
+    yellow:  "#ddaa66"
+    blue:    "#66aaff"
+    magenta: "#dd77ee"
+    cyan:    "#55ccdd"
+    white:   "#ffffff"
+key_bindings:
+  - { key: Equals, mods: Control,         action: None }
+  - { key: Minus,  mods: Control,         action: None }
+  - { key: Equals, mods: Control|Alt, action: IncreaseFontSize }
+  - { key: Minus,  mods: Control|Alt, action: DecreaseFontSize }
+  - { key: R,      mods: Control|Alt, action: ResetFontSize }
+  - { key: Y,      mods: Control|Alt, action: Paste }

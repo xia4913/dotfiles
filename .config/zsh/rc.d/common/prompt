@@ -2,21 +2,29 @@ readonly local hi=%F{102}
 readonly local dim=%B%F{008}
 readonly local normal=%f%k%b
 readonly local prompt_indent=${(r:$(($SHLVL - 1)):: :)}
-local user=%n
+
+local user
 if [[ -n $DOAS_USER ]] || [[ -n $SUDO_USER ]] || [[ ! -O $ZDOTDIR ]]; then
-	user=$hi$user$dim
+	user=$hi%n$dim
 fi
-local host=%m
+local main=$user
+
+local host
 if [[ -n $SSH_CONNECTION ]]; then
-	host=$hi$host$dim
+	host=$hi%m$dim
 fi
-local main=$user@$host
-if [[ -n $TAB ]]; then
-	main=[$TAB]' '$main
+if [[ -n $host ]]; then
+	main=$main@$host
 fi
+
 readonly local char=%(!.#.$)
 PROMPT=$prompt_indent$dim$main$char$normal' '
-RPROMPT=$dim'<%v'$normal
+
+main=%v
+if [[ -n $TAB ]]; then
+	main="$TAB$main"
+fi
+RPROMPT="$dim<$main$normal"
 
 setopt prompt_cr
 PROMPT_EOL_MARK=$dim~$normal

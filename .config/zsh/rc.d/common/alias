@@ -10,7 +10,7 @@ alias pz='print -z'
 alias cp='cp -ip'
 alias mv='mv -i'
 
-alias -g X='| xargs'
+alias -g X='| xargs -r'
 
 alias zl=zellij-last-output
 alias zl1='zl | tail -1'

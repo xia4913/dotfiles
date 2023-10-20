@@ -1,5 +1,0 @@
-= dotfiles
-
-== Note to Self
-=== Installation
-Use https://github.com/xia4913/bin/blob/master/git/dotfiles[dotfiles] and https://github.com/xia4913/bin/blob/master/git/dotfiles-clone[dotfiles-clone] command.
