@@ -1,0 +1,65 @@
+[colors.bright]
+black = "#556666"
+blue = "#66aaff"
+cyan = "#55ccdd"
+green = "#99ee77"
+magenta = "#dd77ee"
+red = "#ff6677"
+white = "#ffffff"
+yellow = "#ddaa66"
+
+[colors.normal]
+black = "#112222"
+blue = "#66aaee"
+cyan = "#55bbcc"
+green = "#99dd77"
+magenta = "#cc77dd"
+red = "#ee6677"
+white = "#bbbbbb"
+yellow = "#cc9966"
+
+[colors.primary]
+background = "#000000"
+foreground = "#dddddd"
+
+[font]
+size = 22
+
+[font.normal]
+family = "monospace"
+
+[font.offset]
+y = -6
+
+[[keyboard.bindings]]
+action = "None"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "R"
+mods = "Control|Alt"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Y"
+mods = "Control|Alt"
+
+[window]
+opacity = 0.95

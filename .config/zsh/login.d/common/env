@@ -5,4 +5,3 @@ export HOST
 export BLOCKSIZE=k
 export TIME_STYLE=long-iso
 export XDG_CONFIG_HOME=~/.config
-export RLWRAP_HOME=~/.history

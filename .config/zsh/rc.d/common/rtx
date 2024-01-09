@@ -1,3 +1,0 @@
-if [[ -w $HOME ]] && is-command-available rtx; then
-	eval "$(rtx activate)"
-fi

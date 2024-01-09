@@ -14,7 +14,10 @@ if [[ -n $SSH_CONNECTION ]]; then
 	host=$hi%m$dim
 fi
 if [[ -n $host ]]; then
-	main=$main@$host
+	if [[ -n $main ]]; then
+		main=$main@
+	fi
+	main=$main$host
 fi
 
 readonly local char=%(!.#.$)

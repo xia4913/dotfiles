@@ -1,8 +1,7 @@
 local suggest
 case $1 in
 new|gen)
-    # suggest="cd $*[-1]"
-    suggest="cd $2"
+    suggest="cd $*[-1]"
     ;;
 esac
 
