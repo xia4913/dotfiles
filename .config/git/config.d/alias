@@ -13,6 +13,7 @@
 	lsu = ls --others --exclude-standard
 
 	l  = log --oneline --max-count 10
+	ln  = l --name-status
 	la = l --max-count -1
 	lg = la --graph --all
 
