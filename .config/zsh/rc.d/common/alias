@@ -13,4 +13,6 @@ alias mv='mv -i'
 alias -g X='| xargs -r'
 
 alias zl=zellij-last-output
-alias zl1='zl | tail -1'
+alias zll='zl | tail -1'
+
+alias note='LESS=-F note'

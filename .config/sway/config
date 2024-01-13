@@ -21,5 +21,5 @@ include config.d/bindsym
 include config.d/window
 include config.d/bar
 
-exec ~/bin/wayland/sway/session
+exec ~/bin/wayland/sway/sway-session
 exec ~/bin/wayland/default-apps
