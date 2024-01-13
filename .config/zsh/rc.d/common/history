@@ -1,3 +1,5 @@
 setopt EXTENDED_HISTORY
-HISTFILE=${XDG_CACHE_HOME:-$HOME/.cache}/history/zsh_history
+setopt SHARE_HISTORY
+HISTFILE=/tmp/user-$UID/history/zsh_history
+HISTSIZE=1000
 SAVEHIST=10000
