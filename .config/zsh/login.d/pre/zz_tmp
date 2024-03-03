@@ -1,2 +1,1 @@
 dumb ~/bin/init-tmpfiles
-export TMPDIR=$(realpath ~/tmp/tmp)

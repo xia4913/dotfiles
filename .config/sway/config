@@ -22,4 +22,4 @@ include config.d/window
 include config.d/bar
 
 exec ~/bin/wayland/sway/sway-session
-exec ~/bin/wayland/default-apps
+exec ~/bin/wayland/sway/default-apps
