@@ -1,0 +1,3 @@
+if is-command-available atuin; then
+	eval "$(ATUIN_NOBIND=true atuin init zsh)"
+fi

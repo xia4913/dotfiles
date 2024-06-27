@@ -104,6 +104,12 @@ keybinds clear-defaults=true {
         bind "X" { CloseFocus; }
         bind "Q" { Quit; }
         bind "D" { Detach; }
+        bind "S" {
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+            }
+            SwitchToMode "locked"
+        }
         bind "?" {
             LaunchOrFocusPlugin "forgot" {
                 floating true

@@ -6,7 +6,7 @@ for zinit_dir in /usr/share/zinit ~/lib/zsh/zinit; do
         break
     fi
 done
-load-rc $(files-in-dir $ZDOTDIR/.zinit/rc.d)
+load-rc $(files-in-dir $ZDOTDIR/zinit/rc.d)
 
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
