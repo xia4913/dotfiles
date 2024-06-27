@@ -17,7 +17,6 @@
 	la = l --max-count -1
 	lg = la --graph --all
 
-	fixup  = commit --fixup
 	amend  = commit --amend --no-edit
 
 	abort    = rebase --abort

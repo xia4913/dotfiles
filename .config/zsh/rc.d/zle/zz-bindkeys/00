@@ -29,3 +29,5 @@ bindkey '^_' undo
 
 bindkey -r '^['
 bindkey -r '^G'
+
+bindkey -s '^o' '^Utab^M'

@@ -1,3 +1,12 @@
+[window]
+opacity = 0.95
+
+[font]
+normal.family = "hackgen"
+size = 22
+offset.y = -6
+glyph_offset.y = -2
+
 [colors.bright]
 black = "#556666"
 blue = "#66aaff"
@@ -21,15 +30,6 @@ yellow = "#cc9966"
 [colors.primary]
 background = "#000000"
 foreground = "#dddddd"
-
-[font]
-size = 22
-
-[font.normal]
-family = "hackgen"
-
-[font.offset]
-y = -6
 
 [[keyboard.bindings]]
 action = "None"
@@ -60,6 +60,3 @@ mods = "Control|Alt"
 action = "Paste"
 key = "Y"
 mods = "Control|Alt"
-
-[window]
-opacity = 0.95

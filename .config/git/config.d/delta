@@ -3,6 +3,7 @@
 [delta]
 	features = style line-numbers
 	syntax-theme = xia
+	pager = p
 [delta "style"]
 	file-decoration-style = none
 	file-style = bold yellow

@@ -1,8 +1,7 @@
-setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS
-setopt HIST_IGNORE_ALL_DUPS
-setopt INC_APPEND_HISTORY
+setopt hist_find_no_dups
+setopt hist_save_no_dups
+setopt hist_ignore_all_dups
+setopt inc_append_history
 
-HISTFILE=/tmp/user-$UID/history/zsh_history
-HISTSIZE=256
-SAVEHIST=1024
+HISTSIZE=64
+unset HISTFILE

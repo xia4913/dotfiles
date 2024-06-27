@@ -58,6 +58,12 @@ C-A-c = [ "yank", "toggle_comments", "paste_after" ]
 
 X = "extend_line_above"         # default: extend_to_line_bounds
 
+A-u = "switch_to_uppercase"
+A-l = "switch_to_lowercase"
+
+"`" = "no_op"
+"A-`" = "no_op"
+
   # goto
   [keys.normal.g]
   g = "goto_last_accessed_file" # default: goto_file_start

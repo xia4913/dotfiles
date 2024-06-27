@@ -1,3 +1,65 @@
+pane_frames false
+default_mode "locked"
+mouse_mode false
+// copy_clipboard "primary"
+simplified_ui true
+
+themes {
+    xia {
+        fg 245
+        bg 0
+        red 88
+        green 70 130 180
+        yellow 0
+        blue 0
+        magenta 0
+        orange 166
+        cyan 0
+        black 16
+        white 255
+    }
+}
+theme "xia"
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
+
+plugins {
+    forgot   location="file:zellij_forgot.wasm"
+    tiny-bar location="file:tiny-bar.wasm"
+    zjstatus location="file:zjstatus.wasm" {
+        format_left   "{command_hostname}{tabs}"
+        format_center "{notifications}"
+        format_right  "{mode}"
+
+        mode_normal  "#[fg=blue]{name}"
+        mode_locked  ""
+        mode_resize  "#[fg=red]{name}"
+        mode_default_to_mode "resize"
+
+        tab_normal   "#[fg=white]{index}{sync_indicator}{fullscreen_indicator}{floating_indicator}#[fg=0]:#[fg=whitte]{name}"
+        tab_active   "#[fg=blue]{index}{sync_indicator}{fullscreen_indicator}{floating_indicator}#[fg=0]:#[fg=white]{name}"
+        tab_separator " "
+        tab_sync_indicator       "S"
+        tab_fullscreen_indicator "F"
+        tab_floating_indicator   "f"
+
+        notification_format_unread "{message}"
+
+        command_hostname_command    "zellij-hostname"
+        command_hostname_format     "[fg=#6C7086]{stdout}"
+        command_hostname_interval   "0"
+        command_hostname_rendermode "static"
+
+        datetime          "#[fg=#6C7086,bold]{format}"
+        datetime_format   "%T"
+        datetime_timezone "Asia/Tokyo"
+    }
+}
+
 keybinds clear-defaults=true {
     shared {
         bind "Ctrl g" { SwitchToMode "normal"; }
@@ -10,12 +72,7 @@ keybinds clear-defaults=true {
         bind "c" { NewPane "Down"; SwitchToMode "locked"; }
         bind "t" { NewTab; SwitchToMode "locked"; }
         bind "T" { ToggleTab; }
-        bind "R" { SwitchToMode "renametab"; TabNameInput 0; }
-        bind "." {
-            Run "zellij-rename-tab-pwd" {
-                close_on_exit true
-            };
-        }
+        bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
         bind "Ctrl p" "Up"    { FocusPreviousPane;      SwitchToMode "locked"; }
         bind "Ctrl n" "Down"  { FocusNextPane;          SwitchToMode "locked"; }
         bind "Ctrl b" "Left"  { MoveFocusOrTab "Left";  SwitchToMode "locked"; }
@@ -44,34 +101,25 @@ keybinds clear-defaults=true {
         bind "PageUp" { SwitchToMode "scroll"; }
         bind "e"      { EditScrollback; SwitchToMode "locked"; }
         bind "/"      { SwitchToMode "entersearch"; SearchInput 0; }
-        bind "Alt s"  { SwitchToMode "session"; }
         bind "X" { CloseFocus; }
-    }
-    locked {
-    }
-    resize {
+        bind "Q" { Quit; }
+        bind "D" { Detach; }
+        bind "?" {
+            LaunchOrFocusPlugin "forgot" {
+                floating true
+            }
+            SwitchToMode "locked"
+        }
     }
     pane {
-        bind "d" { NewPane "Down"; }
-        bind "r" { NewPane "Right"; }
-        bind "R" { SwitchToMode "renamepane"; PaneNameInput 0; }
-        bind "Z" { TogglePaneFrames; }
-    }
-    move {
+        bind "r" { SwitchToMode "renamepane"; PaneNameInput 0; }
+        bind "z" { TogglePaneFrames; }
     }
     tab {
-        bind "Ctrl b" "Left"  { GoToPreviousTab; }
-        bind "Ctrl f" "Right" { GoToNextTab; }
         bind "X" { CloseTab; }
-        bind "S" { ToggleActiveSyncTab; }
+        bind "s" { ToggleActiveSyncTab; }
     }
-    scroll {
-        bind "e" { EditScrollback; SwitchToMode "normal"; }
-    }
-    search {
-        bind "n" { Search "down"; }
-        bind "p" { Search "up"; }
-    }
+
     shared_among "scroll" "search" {
         bind "Ctrl n" "Down"    { ScrollDown; }
         bind "Ctrl p" "Up"      { ScrollUp; }
@@ -81,10 +129,18 @@ keybinds clear-defaults=true {
         bind "u"                { HalfPageScrollUp; }
         bind "/" { SwitchToMode "entersearch"; SearchInput 0; }
     }
+    scroll {
+        bind "e" { EditScrollback; SwitchToMode "normal"; }
+    }
+    search {
+        bind "n" { Search "down"; }
+        bind "p" { Search "up"; }
+    }
     entersearch {
         bind "Enter" { SwitchToMode "Search"; }
         bind "Esc"   { SwitchToMode "Scroll"; }
     }
+
     shared_among "renametab" "renamepane" {
         bind "Enter" { SwitchToMode "locked"; }
     }
@@ -93,153 +149,5 @@ keybinds clear-defaults=true {
     }
     renamepane {
         bind "Esc" { UndoRenamePane; SwitchToMode "locked"; }
-    }
-    session {
-        bind "Q" { Quit; }
-        bind "d" { Detach; }
-    }
-}
-
-// Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
-// eg. when terminal window with an active zellij session is closed
-// Options:
-//   - detach (Default)
-//   - quit
-//
-// on_force_close "quit"
-
-// Send a request for a simplified ui (without arrow fonts) to plugins
-// Options:
-//   - true
-//   - false (Default)
-//
-// simplified_ui true
-
-// Choose the path to the default shell that zellij will use for opening new panes
-// Default: $SHELL
-//
-// default_shell "fish"
-
-// Toggle between having pane frames around the panes
-// Options:
-//   - true (default)
-//   - false
-//
-pane_frames false
-
-// Define color themes for Zellij
-// For more examples, see: https://github.com/zellij-org/zellij/tree/main/example/themes
-// Once these themes are defined, one of them should to be selected in the "theme" section of this file
-//
-// themes {
-//     dracula {
-//         fg 248 248 242
-//         bg 40 42 54
-//         red 255 85 85
-//         green 80 250 123
-//         yellow 241 250 140
-//         blue 98 114 164
-//         magenta 255 121 198
-//         orange 255 184 108
-//         cyan 139 233 253
-//         black 0 0 0
-//         white 255 255 255
-//     }
-// }
-themes {
-    default {
-        fg 245
-        bg 0
-        black 16
-        red 88
-        green 70 130 180
-        yellow 0
-        blue 0
-        magenta 0
-        cyan 0
-        white 255
-        orange 166
-    }
-}
-
-// Choose the theme that is specified in the themes section.
-// Default: default
-//
-// theme "default"
-
-// The name of the default layout to load on startup
-// Default: "default"
-//
-// default_layout "compact"
-
-// Choose the mode that zellij uses when starting up.
-// Default: normal
-//
-default_mode "locked"
-
-// Toggle enabling the mouse mode.
-// On certain configurations, or terminals this could
-// potentially interfere with copying text.
-// Options:
-//   - true (default)
-//   - false
-//
-mouse_mode false
-
-// Configure the scroll back buffer size
-// This is the number of lines zellij stores for each pane in the scroll back
-// buffer. Excess number of lines are discarded in a FIFO fashion.
-// Valid values: positive integers
-// Default value: 10000
-//
-// scroll_buffer_size 10000
-
-// Provide a command to execute when copying text. The text will be piped to
-// the stdin of the program to perform the copy. This can be used with
-// terminal emulators which do not support the OSC 52 ANSI control sequence
-// that will be used by default if this option is not set.
-// Examples:
-//
-// copy_command "xclip -selection clipboard" // x11
-copy_command "wl-copy"                    // wayland
-// copy_command "pbcopy"                     // osx
-
-// Choose the destination for copied text
-// Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
-// Does not apply when using copy_command.
-// Options:
-//   - system (default)
-//   - primary
-//
-// copy_clipboard "primary"
-
-// Enable or disable automatic copy (and clear) of selection when releasing mouse
-// Default: true
-//
-// copy_on_select false
-
-// Path to the default editor to use to edit pane scrollbuffer
-// Default: $EDITOR or $VISUAL
-//
-// scrollback_editor "/usr/bin/vim"
-
-// When attaching to an existing session with other users,
-// should the session be mirrored (true)
-// or should each user have their own cursor (false)
-// Default: false
-//
-// mirror_session true
-
-// The folder in which Zellij will look for layouts
-//
-// layout_dir "/path/to/my/layout_dir"
-
-// The folder in which Zellij will look for themes
-//
-// theme_dir "/path/to/my/theme_dir"
-
-ui {
-    pane_frames {
-        hide_session_name true
     }
 }

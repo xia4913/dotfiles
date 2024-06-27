@@ -1,1 +1,5 @@
-history-all -n | s $@
+if [[ -n $ATUIN_SESSION ]]; then
+	atuin search -rf '{command}' $@ | s $@
+else
+	history-all -n | s $@
+fi

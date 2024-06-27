@@ -1,5 +1,0 @@
-local -a flags
-if [[ ! -t 0 ]]; then
-	flags+=-N
-fi
-command rg $flags $@ | p
