@@ -1,0 +1,11 @@
+local src=~/.config/sheldon/plugins.toml
+local dir=~/.cache/zsh/sheldon
+local cache=$dir/source
+
+if ! [[ -f $cache ]] || [[ $src -nt $cache ]]; then
+	if ! [[ -d $dir ]]; then
+		mkdir -p $dir
+	fi
+	sheldon source >$cache
+fi
+source $cache

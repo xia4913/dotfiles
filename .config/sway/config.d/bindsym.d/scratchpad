@@ -1,7 +1,0 @@
-bindsym $mod+Alt+s mode "scratchpad"
-mode "scratchpad" {
-    bindsym Escape  $break
-    bindsym s       scratchpad show
-    bindsym h       move scratchpad
-    bindsym Space   exec "sway-toggle-scratchpad"
-}

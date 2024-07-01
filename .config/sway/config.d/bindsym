@@ -1,7 +1,0 @@
-set $break mode "default"
-
-include bindsym.d/main
-include bindsym.d/layout
-include bindsym.d/scratchpad
-include bindsym.d/dialog
-include bindsym.d/misc

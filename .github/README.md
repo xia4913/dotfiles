@@ -2,19 +2,19 @@
 
 - Shell
 [Zsh](http://www.zsh.org/)
+- Wayland Compositor
+[niri](https://github.com/YaLTeR/niri)
 - Editor
 [Helix](https://helix-editor.com/)
-- Multiplexer
-[Zellij](https://zellij.dev/)
 - Terminal Emulator
 [Alacritty](https://alacritty.org/)
-- Wayland Compositor
-[Sway](https://swaywm.org/)
+- Multiplexer
+[Zellij](https://zellij.dev/)
 
 ## Note to Self
 ### Installation
 Use
-[dotfiles](https://github.com/xia4913/bin/blob/master/git/dotfiles)
+[dotfiles](https://github.com/xia4913/bin/blob/main/git/dotfiles)
 and
-[dotfiles-clone](https://github.com/xia4913/bin/blob/master/git/dotfiles-clone)
+[dotfiles-clone](https://github.com/xia4913/bin/blob/main/git/dotfiles-clone)
 command.

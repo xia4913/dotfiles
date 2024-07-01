@@ -1,9 +1,0 @@
-if [[ -w $HOME ]]; then
-	local i
-	for i in mise rtx; do
-		if is-command-available $i; then
-			eval "$($i activate)"
-			break
-		fi
-	done
-fi
