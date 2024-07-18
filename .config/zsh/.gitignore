@@ -1,0 +1,5 @@
+*.zwc
+.zshrc
+.zlogin
+.zlogout
+.zcompdump

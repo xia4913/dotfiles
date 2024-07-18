@@ -6,8 +6,10 @@
 
 TARGET = .zshrc .zlogin .zlogout .zcompdump
 
+.PHONY: all
 all: $(TARGET) cache zcompile
 
+.PHONY: zcompile
 zcompile:
 	bin/zcompile $(TARGET) .zshenv functions cache
 
@@ -21,6 +23,7 @@ zcompile:
 .zcompdump:
 	zsh -c 'autoload -Uz compinit; compinit'
 
+.PHONY: cache
 cache: $(addprefix cache/,pager path sheldon atuin mise)
 cache/pager:
 	( env-config editor; env-config pager ) >$@
@@ -33,6 +36,7 @@ cache/atuin:
 cache/mise:
 	mise activate zsh >$@
 
+.PHONY: clean clean-zwc clean-cache clean-zsh-files
 clean: clean-zwc clean-cache clean-zsh-files
 clean-zwc:
 	find -L . -type f -name '*.zwc' | xargs -r rm
