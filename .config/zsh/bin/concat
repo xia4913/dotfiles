@@ -1,0 +1,22 @@
+#!/bin/sh -Ceu
+
+f() {
+	f=$1
+	[ -f "$f" ] || return 0
+	echo "$f"
+}
+fa() {
+	d=$1
+	[ -d "$d" ] || return 0
+	find "$d" -type f -not -name '*.erb' | sort
+}
+
+base=$1
+
+(
+	for i in pre common zle; do
+		fa "$base/$i"
+	done
+	f "$base/host/$(uname -n)"
+	fa "$base/post"
+) | xargs cat

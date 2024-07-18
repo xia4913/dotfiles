@@ -1,0 +1,61 @@
+unset WORDCHARS
+zstyle ':zle:*' word-style shell
+zstyle ':zle:*' word-chars ' |'
+zstyle ':zle:*-match' word-style unspecified
+zstyle ':zle:*-match' word-chars ' |/,'
+zstyle ':zle:*-match-alnum' word-style standard-subword
+zstyle ':zle:*-match-alnum' word-chars ''
+#zstyle ':zle:*-match-alnum' skip-whitespace-first true
+
+bindkey '^[h' backward-kill-word
+
+autoload -Uz forward-word-match
+zle -N forward-word-match
+zle -N forward-word forward-word-match
+zle -N forward-word-match-alnum forward-word-match
+autoload -Uz backward-word-match
+zle -N backward-word-match
+zle -N backward-word backward-word-match
+zle -N backward-word-match-alnum backward-word-match
+autoload -Uz kill-word-match
+zle -N kill-word-match
+zle -N kill-word kill-word-match
+zle -N kill-word-match-alnum kill-word-match
+autoload -Uz backward-kill-word-match
+zle -N backward-kill-word-match
+zle -N backward-kill-word backward-kill-word-match
+zle -N backward-kill-word-match-alnum backward-kill-word-match
+autoload -Uz up-case-word-match
+zle -N up-case-word-match
+zle -N up-case-word up-case-word-match
+zle -N up-case-word-match-alnum up-case-word-match
+autoload -Uz down-case-word-match
+zle -N down-case-word-match
+zle -N down-case-word down-case-word-match
+zle -N down-case-word-match-alnum down-case-word-match
+autoload -Uz capitalize-word-match
+zle -N capitalize-word-match
+zle -N capitalize-word capitalize-word-match
+zle -N capitalize-word-match-alnum capitalize-word-match
+autoload -Uz transpose-words-match
+zle -N transpose-words-match
+zle -N transpose-words transpose-words-match
+zle -N transpose-words-match-alnum transpose-words-match
+
+bindkey '^[f' forward-word
+bindkey '^[b' backward-word
+bindkey '^[d' kill-word
+bindkey '^[h' backward-kill-word
+bindkey '^[t' transpose-words
+
+bindkey '^[^F' forward-word-match
+bindkey '^[^B' backward-word-match
+bindkey '^[^D' kill-word-match
+bindkey '^[^H' backward-kill-word-match
+bindkey '^[^T' transpose-words-match
+
+bindkey '^[F' forward-word-match-alnum
+bindkey '^[B' backward-word-match-alnum
+bindkey '^[D' kill-word-match-alnum
+bindkey '^[H' backward-kill-word-match-alnum
+bindkey '^[T' transpose-words-match-alnum

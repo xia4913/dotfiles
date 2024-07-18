@@ -1,0 +1,4 @@
+zsh-defer -c '
+	. $ZDOTDIR/cache/atuin
+	ZSH_AUTOSUGGEST_STRATEGY=(history atuin)
+'

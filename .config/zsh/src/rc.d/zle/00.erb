@@ -1,0 +1,23 @@
+autoload -Uz zed
+
+% top = Pathname('functions/zle')
+% d = top.join('functions')
+fpath+=$ZDOTDIR/<%= d %>
+% d.glob('{.,**/*}').filter{|i| i.file? && !i.basename.to_s.match(/\.zwc$/) }.each do |f|
+autoload -Uz <%= f.basename %>
+% end
+
+% d = top.join('widgets')
+fpath+=$ZDOTDIR/<%= d %>
+% d.glob('{.,**/*}').filter{|i| i.file? && !i.basename.to_s.match(/\.zwc$/) }.each do |f|
+autoload -Uz <%= f.basename %>
+zle -N <%= f.basename %>
+% end
+
+% d = top.join('completions')
+% d.glob('{.,*}').filter(&:directory?).each do |sub|
+fpath+=$ZDOTDIR/<%= sub %>
+%   sub.glob('*').filter{|i| i.file? && !i.basename.to_s.match(/\.zwc$/) }.each do |f|
+autoload -Uz <%= f.basename %>
+%   end
+% end

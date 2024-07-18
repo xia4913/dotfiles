@@ -1,0 +1,56 @@
+() {
+	readonly local hi=%F{102}
+	readonly local dim=%B%F{008}
+	readonly local normal=%f%k%b
+	readonly local indent=${(r:$(($SHLVL - 1)):: :)}
+
+	setopt prompt_cr
+	PROMPT_EOL_MARK=$dim~$normal
+
+	setopt prompt_subst
+	() {
+		local user
+		if [[ -n $DOAS_USER ]] || [[ -n $SUDO_USER ]] || [[ ! -O $ZDOTDIR ]]; then
+			user=$hi%n$dim
+		fi
+		local main=$user
+		local host
+		if [[ -n $SSH_CONNECTION ]]; then
+			host=$hi%m$dim
+		fi
+		if [[ -n $host ]]; then
+			if [[ -n $main ]]; then
+				main=$main@
+			fi
+			main=$main$host
+		fi
+
+		function prompt-status() {
+			readonly local r=$?
+			if (( r > 0 )); then
+				echo "%F{red}$r$f "
+			fi
+		}
+
+		readonly local char=%(!.#.$)
+		PROMPT="$indent\$(prompt-status)$dim$main$char$normal "
+	}
+	() {
+		function zle-keymap-select zle-line-init zle-line-finish {
+			readonly local label=${KEYMAP:#main}
+			if [[ $psvar[1] != $label ]]; then
+				psvar[1]=$label
+				zle reset-prompt
+			fi
+		}
+		zle -N zle-keymap-select
+		zle -N zle-line-init
+		zle -N zle-line-finish
+
+		function rprompt-str() {
+			readonly local a=($(print -P %v) $TAB $duration_info)
+			echo ${(j: :)a:#}
+		}
+		RPROMPT="$dim<\$(rprompt-str)$normal"
+	}
+}

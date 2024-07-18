@@ -1,0 +1,18 @@
+#setopt local_options extended_glob
+
+compctl -l '' x new-window
+
+autoload -Uz compinit
+compinit -u
+
+% Pathname.new('functions/completions').glob('**/*').filter{|i| i.file? && !i.basename.to_s.match?('\.zwc$')}.map(&:basename).each do |f|
+compdef <%= f %> <%= f.sub(/^_/, '') %>
+% end
+compdef dotfiles=git
+
+# wrapper commands
+% names = Pathname(ENV['HOME']).glob('bin/wrapper/*-').map{|i| i.basename.to_s.sub(/-$/, '')}
+zstyle ':completion:*:-command-:*' ignored-patterns '<%= names.join('|') %>'
+% names.each do |i|
+(($+_comps[<%= i %>])) && compdef <%= i %>-=<%= i %>
+% end

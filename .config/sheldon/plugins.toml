@@ -1,27 +1,23 @@
-shell = "zsh"
-apply = ["defer"]
+shell = 'zsh'
+apply = ['defer']
+
+[templates]
+defer = "zsh-defer -c '{{ hooks?.pre | nl }}{% for file in files %}. \"{{ file }}\";{% endfor %}{{ hooks?.post }}'"
+fpath_functions = 'fpath=("{{dir}}/functions" $fpath)'  # XXX
 
 [plugins.zsh-defer]
-github = "romkatv/zsh-defer"
-apply = ["source"]
-[templates]
-defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
-
-[plugins.zsh-smartcache]
-github = "QuarticCat/zsh-smartcache"
+github = 'romkatv/zsh-defer'
+apply = ['source']
 
 [plugins.zsh-syntax-highlighting]
-github = "zsh-users/zsh-syntax-highlighting"
+github = 'zsh-users/zsh-syntax-highlighting'
+hooks.post = '_sheldon-hook-post-zsh-syntax-highlighting'
 
 [plugins.zsh-autosuggestions]
-github = "zsh-users/zsh-autosuggestions"
+github = 'zsh-users/zsh-autosuggestions'
+hooks.post = '_sheldon-hook-post-zsh-autosuggestions'
 
-[plugins.zsh-command-time]
-github = "popstas/zsh-command-time"
-hooks.post = 'ZSH_COMMAND_TIME_COLOR=008'
-
-[plugins.atuin]
-inline = 'zsh-defer smartcache eval atuin init --disable-ctrl-r --disable-up-arrow zsh'
-
-[plugins.mise]
-inline = 'zsh-defer smartcache eval mise activate'
+[plugins.duraiton-info]
+github = 'zimfw/duration-info'
+apply = ['fpath_functions', 'defer']
+hooks.post = '_sheldon-hook-post-duration-info'

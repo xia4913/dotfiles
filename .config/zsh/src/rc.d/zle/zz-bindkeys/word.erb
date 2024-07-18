@@ -1,0 +1,43 @@
+unset WORDCHARS
+zstyle ':zle:*' word-style shell
+zstyle ':zle:*' word-chars ' |'
+zstyle ':zle:*-match' word-style unspecified
+zstyle ':zle:*-match' word-chars ' |/,'
+zstyle ':zle:*-match-alnum' word-style standard-subword
+zstyle ':zle:*-match-alnum' word-chars ''
+#zstyle ':zle:*-match-alnum' skip-whitespace-first true
+
+bindkey '^[h' backward-kill-word
+
+% %w(
+%   forward-word backward-word
+%   kill-word backward-kill-word
+%   up-case-word down-case-word
+%   capitalize-word
+%   transpose-words
+% ).each do |w|
+%   m="#{w}-match"
+%   a="#{m}-alnum"
+autoload -Uz <%= m %>
+zle -N <%= m %>
+zle -N <%= w %> <%= m %>
+zle -N <%= a %> <%= m %>
+% end
+
+bindkey '^[f' forward-word
+bindkey '^[b' backward-word
+bindkey '^[d' kill-word
+bindkey '^[h' backward-kill-word
+bindkey '^[t' transpose-words
+
+bindkey '^[^F' forward-word-match
+bindkey '^[^B' backward-word-match
+bindkey '^[^D' kill-word-match
+bindkey '^[^H' backward-kill-word-match
+bindkey '^[^T' transpose-words-match
+
+bindkey '^[F' forward-word-match-alnum
+bindkey '^[B' backward-word-match-alnum
+bindkey '^[D' kill-word-match-alnum
+bindkey '^[H' backward-kill-word-match-alnum
+bindkey '^[T' transpose-words-match-alnum

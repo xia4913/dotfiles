@@ -1,0 +1,12 @@
+zstyle ':completion:*:commands' rehash 1
+zstyle ':completion:*' completer _oldlist _complete _match _ignored _prefix
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z} r:|[-_.]=**'
+zstyle ':completion:*' use-cache yes
+zstyle ':completion:*' cache-path $ZDOTDIR/cache/comp
+zstyle ':completion:*:warnings' format '%F{red}no match %d%f'
+
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' format '%B%F{yellow}[%d]%f%b'
+
+# exa default theme https://github.com/ogham/exa/blob/master/src/theme/default_theme.rs
+zstyle ':completion:*' list-colors {di,tw,ow}='34;1' ln=36 pi=33 {bd,cd}='33;1' so='31;1' {ex,su,sg}='32;1' or=31

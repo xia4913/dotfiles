@@ -1,0 +1,6 @@
+() {
+	readonly local bin=~/bin
+	if ! (( ${path[(I)$bin]} )); then
+		path+=~/bin
+	fi
+}

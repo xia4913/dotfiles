@@ -1,0 +1,5 @@
+#!/bin/sh -Ceu
+
+bin/files "$@" | while read -r f; do
+	[ "$f" -nt "$f.swf" ] && echo "$f"
+done | zsh -c 'while read f; do zcompile $f; done'

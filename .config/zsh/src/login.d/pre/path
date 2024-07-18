@@ -1,0 +1,5 @@
+if [[ -n $INSIDE_EMACS ]] && [[ $TERM = dumb ]]; then
+	# set by elisp
+else
+	. $ZDOTDIR/cache/path
+fi

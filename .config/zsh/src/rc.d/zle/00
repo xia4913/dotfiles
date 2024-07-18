@@ -1,0 +1,31 @@
+autoload -Uz zed
+
+fpath+=$ZDOTDIR/functions/zle/functions
+autoload -Uz is-beginning-of-word
+
+fpath+=$ZDOTDIR/functions/zle/widgets
+autoload -Uz history-fuzzy-finder-search
+zle -N history-fuzzy-finder-search
+autoload -Uz insert-braces
+zle -N insert-braces
+autoload -Uz insert-braces-back
+zle -N insert-braces-back
+autoload -Uz insert-home-directory
+zle -N insert-home-directory
+autoload -Uz insert-last-word-with-space
+zle -N insert-last-word-with-space
+autoload -Uz insert-parent-directory
+zle -N insert-parent-directory
+autoload -Uz insert-positional-word
+zle -N insert-positional-word
+autoload -Uz insert-x-paste-quoted
+zle -N insert-x-paste-quoted
+autoload -Uz just-one-space
+zle -N just-one-space
+autoload -Uz up-history-without-last-word
+zle -N up-history-without-last-word
+
+fpath+=$ZDOTDIR/functions/zle/completions
+fpath+=$ZDOTDIR/functions/zle/completions/menu-select
+autoload -Uz accept-and-infer-next-history-1
+autoload -Uz menu-foo

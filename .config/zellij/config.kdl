@@ -77,10 +77,10 @@ keybinds clear-defaults=true {
         bind "Ctrl n" "Down"  { FocusNextPane;          SwitchToMode "locked"; }
         bind "Ctrl b" "Left"  { MoveFocusOrTab "Left";  SwitchToMode "locked"; }
         bind "Ctrl f" "Right" { MoveFocusOrTab "Right"; SwitchToMode "locked"; }
-        bind "P" { MovePane "Up";    SwitchToMode "locked"; }
-        bind "N" { MovePane "Down";  SwitchToMode "locked"; }
-        bind "B" { BreakPaneLeft;  SwitchToMode "locked"; }
-        bind "F" { BreakPaneRight; SwitchToMode "locked"; }
+        bind "P" { MovePane "Up";   SwitchToMode "locked"; }
+        bind "N" { MovePane "Down"; SwitchToMode "locked"; }
+        bind "B" { BreakPaneLeft;   SwitchToMode "locked"; }
+        bind "F" { BreakPaneRight;  SwitchToMode "locked"; }
         bind "m"     { ToggleFocusFullscreen;     SwitchToMode "locked"; }
         bind "Space" { ToggleFloatingPanes;       SwitchToMode "locked"; }
         bind "f"     { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
@@ -99,8 +99,8 @@ keybinds clear-defaults=true {
         bind "Alt p"  { SwitchToMode "pane"; }
         bind "Alt t"  { SwitchToMode "tab"; }
         bind "PageUp" { SwitchToMode "scroll"; }
-        bind "e"      { EditScrollback; SwitchToMode "locked"; }
         bind "/"      { SwitchToMode "entersearch"; SearchInput 0; }
+        bind "E" { EditScrollback; SwitchToMode "locked"; }
         bind "X" { CloseFocus; }
         bind "Q" { Quit; }
         bind "D" { Detach; }

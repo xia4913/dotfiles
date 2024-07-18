@@ -1,0 +1,3 @@
+if [[ $SHLVL = 1 ]] && [[ $TTY = /dev/tty1 ]]; then
+	print -z niri-
+fi

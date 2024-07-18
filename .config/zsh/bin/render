@@ -1,0 +1,11 @@
+#!/bin/sh -Ceu
+
+base=$1
+
+find "$base" -type f -name '*.erb' | while read -r src; do
+	dst=${src%.erb}
+	if ! [ -f "$dst" ] || [ "$src" -nt "$dst" ]; then
+		rm -f "$dst"
+		erb -r pathname "$src" >"$dst"
+	fi
+done

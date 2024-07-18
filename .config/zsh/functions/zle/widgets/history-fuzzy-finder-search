@@ -1,9 +1,0 @@
-#emulate -L zsh
-#zle -I
-
-output=$(history-fuzzy-finder $BUFFER)
-if [[ -n $output ]]; then
-	RBUFFER=
-	LBUFFER="$output "
-fi
-zle reset-prompt

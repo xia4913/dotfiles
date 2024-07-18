@@ -1,0 +1,70 @@
+autoload -Uz add-zsh-hook
+
+fpath+=$ZDOTDIR/functions
+autoload -Uz cd-real
+autoload -Uz cdp
+autoload -Uz cdt
+autoload -Uz dirstack-s
+autoload -Uz history-all
+autoload -Uz history-fuzzy-finder
+autoload -Uz iargs
+autoload -Uz mcd
+autoload -Uz pty-run
+autoload -Uz reload
+autoload -Uz renumber
+autoload -Uz show-error
+autoload -Uz show-info
+autoload -Uz update-ssh-auth-sock
+autoload -Uz zclock
+fpath+=$ZDOTDIR/functions/cache
+fpath+=$ZDOTDIR/functions/cache/pager
+autoload -Uz load-pager
+autoload -Uz pager-cache
+autoload -Uz show-pager-cache
+autoload -Uz update-pager-cache
+fpath+=$ZDOTDIR/functions/cache/path
+autoload -Uz load-path
+autoload -Uz path-cache
+autoload -Uz show-path-cache
+autoload -Uz update-path-cache
+fpath+=$ZDOTDIR/functions/completions
+autoload -Uz _mcd
+autoload -Uz _tab
+fpath+=$ZDOTDIR/functions/completions/git
+autoload -Uz _git-abort
+autoload -Uz _git-alias
+autoload -Uz _git-amend
+autoload -Uz _git-branch-name
+autoload -Uz _git-continue
+autoload -Uz _git-current-branch
+autoload -Uz _git-error-unless-inside
+autoload -Uz _git-initial-commit
+autoload -Uz _git-is-inside
+autoload -Uz _git-is-main-branch
+autoload -Uz _git-log-branch
+autoload -Uz _git-ls-untracked
+autoload -Uz _git-new
+autoload -Uz _git-new-branch
+autoload -Uz _git-origin
+autoload -Uz _git-parent-branch
+autoload -Uz _git-parent-commit
+autoload -Uz _git-relative
+autoload -Uz _git-status-short-red
+autoload -Uz _git-status-short-staged
+autoload -Uz _git-top
+autoload -Uz _git-unstage
+fpath+=$ZDOTDIR/functions/hook
+fpath+=$ZDOTDIR/functions/hook/chpwd
+autoload -Uz show-pwd
+autoload -Uz title-pwd
+autoload -Uz zellij-pwd
+fpath+=$ZDOTDIR/functions/hook/precmd
+autoload -Uz show-exit-status
+fpath+=$ZDOTDIR/functions/hook/preexec
+autoload -Uz show-expanded-alias
+fpath+=$ZDOTDIR/functions/hook/zshaddhistory
+autoload -Uz blank
+fpath+=$ZDOTDIR/functions/shims
+autoload -Uz wasmer
+fpath+=$ZDOTDIR/functions/wrapper
+autoload -Uz cargo

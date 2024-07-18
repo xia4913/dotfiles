@@ -1,0 +1,20 @@
+_sheldon-hook-post-zsh-syntax-highlighting() {
+	ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets)
+	unfunction $0
+}
+_sheldon-hook-post-zsh-autosuggestions() {
+	ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=("${(@)ZSH_AUTOSUGGEST_ACCEPT_WIDGETS#forward-char}")
+	ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char forward-word-match)
+	ZSH_AUTOSUGGEST_STRATEGY=(history atuin)
+	unfunction $0
+}
+_sheldon-hook-post-duration-info() {
+	autoload -Uz duration-info-preexec
+	add-zsh-hook preexec duration-info-preexec
+	autoload -Uz duration-info-precmd
+	add-zsh-hook precmd  duration-info-precmd
+	zstyle :zim:duration-info threshold 1
+	zstyle :zim:duration-info format %d
+	unfunction $0
+} 
+. $ZDOTDIR/cache/sheldon

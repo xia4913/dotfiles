@@ -1,0 +1,4 @@
+if ! dumb pgrep -c zellij; then
+	dumb zellij delete-all-sessions --yes
+	find ~/.cache/zellij -type d -empty -delete
+fi

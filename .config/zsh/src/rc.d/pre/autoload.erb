@@ -1,0 +1,8 @@
+autoload -Uz add-zsh-hook
+
+% Pathname('functions').glob('{.,**/*}').filter{|i| i.directory? && !i.to_s.match(%r(/zle)) }.each do |d|
+fpath+=$ZDOTDIR/<%= d %>
+%   d.glob('*').filter{|i| i.file? && !i.basename.to_s.match(/\.zwc$/) }.each do |f|
+autoload -Uz <%= f.basename %>
+%   end
+% end

@@ -1,0 +1,61 @@
+#setopt local_options extended_glob
+
+compctl -l '' x new-window
+
+autoload -Uz compinit
+compinit -u
+
+compdef _mcd mcd
+compdef _tab tab
+compdef _git-abort git-abort
+compdef _git-alias git-alias
+compdef _git-amend git-amend
+compdef _git-branch-name git-branch-name
+compdef _git-continue git-continue
+compdef _git-current-branch git-current-branch
+compdef _git-error-unless-inside git-error-unless-inside
+compdef _git-initial-commit git-initial-commit
+compdef _git-is-inside git-is-inside
+compdef _git-is-main-branch git-is-main-branch
+compdef _git-log-branch git-log-branch
+compdef _git-ls-untracked git-ls-untracked
+compdef _git-new git-new
+compdef _git-new-branch git-new-branch
+compdef _git-origin git-origin
+compdef _git-parent-branch git-parent-branch
+compdef _git-parent-commit git-parent-commit
+compdef _git-relative git-relative
+compdef _git-status-short-red git-status-short-red
+compdef _git-status-short-staged git-status-short-staged
+compdef _git-top git-top
+compdef _git-unstage git-unstage
+compdef dotfiles=git
+
+# wrapper commands
+zstyle ':completion:*:-command-:*' ignored-patterns 'anydesk|ascii-image-converter|browsh|df|diff|du|eza|fcitx5-configtool|fd|free|gimp|irb|journalctl|less|niri|node|pixterm|pkglog|pwgen|rg|rsync|sk|ssh-keygen|sway|systemctl|systemd-mount'
+(($+_comps[anydesk])) && compdef anydesk-=anydesk
+(($+_comps[ascii-image-converter])) && compdef ascii-image-converter-=ascii-image-converter
+(($+_comps[browsh])) && compdef browsh-=browsh
+(($+_comps[df])) && compdef df-=df
+(($+_comps[diff])) && compdef diff-=diff
+(($+_comps[du])) && compdef du-=du
+(($+_comps[eza])) && compdef eza-=eza
+(($+_comps[fcitx5-configtool])) && compdef fcitx5-configtool-=fcitx5-configtool
+(($+_comps[fd])) && compdef fd-=fd
+(($+_comps[free])) && compdef free-=free
+(($+_comps[gimp])) && compdef gimp-=gimp
+(($+_comps[irb])) && compdef irb-=irb
+(($+_comps[journalctl])) && compdef journalctl-=journalctl
+(($+_comps[less])) && compdef less-=less
+(($+_comps[niri])) && compdef niri-=niri
+(($+_comps[node])) && compdef node-=node
+(($+_comps[pixterm])) && compdef pixterm-=pixterm
+(($+_comps[pkglog])) && compdef pkglog-=pkglog
+(($+_comps[pwgen])) && compdef pwgen-=pwgen
+(($+_comps[rg])) && compdef rg-=rg
+(($+_comps[rsync])) && compdef rsync-=rsync
+(($+_comps[sk])) && compdef sk-=sk
+(($+_comps[ssh-keygen])) && compdef ssh-keygen-=ssh-keygen
+(($+_comps[sway])) && compdef sway-=sway
+(($+_comps[systemctl])) && compdef systemctl-=systemctl
+(($+_comps[systemd-mount])) && compdef systemd-mount-=systemd-mount

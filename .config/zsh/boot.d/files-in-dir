@@ -1,9 +1,0 @@
-setopt local_options extended_glob null_glob
-
-local dir=
-for dir in $@; do
-	if [[ ! -d $dir ]]; then
-		continue
-	fi
-    echo $dir/**/*~*.zwc(.)
-done

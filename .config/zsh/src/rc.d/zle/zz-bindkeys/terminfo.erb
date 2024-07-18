@@ -1,0 +1,14 @@
+% %w(
+%   khome beginning-of-line
+%   kend  end-of-line
+%   kdch1 delete-char
+% ).each_slice(2) do |capname, func|
+(( ${+terminfo[<%= capname %>]} )) && bindkey $terminfo[<%= capname %>] <%= func %>
+% end
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+  autoload -Uz add-zle-hook-widget
+  function enter_keyboard_transmit_mode { echoti smkx }
+  function leave_keyboard_transmit_mode { echoti rmkx }
+  add-zle-hook-widget -Uz zle-line-init   enter_keyboard_transmit_mode
+  add-zle-hook-widget -Uz zle-line-finish leave_keyboard_transmit_mode
+fi

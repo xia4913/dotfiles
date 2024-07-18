@@ -1,7 +1,0 @@
-local file=
-for file in $@; do
-	if [[ -f $file ]]; then
-		() { . $file }
-		zcompile-unless $file
-	fi
-done

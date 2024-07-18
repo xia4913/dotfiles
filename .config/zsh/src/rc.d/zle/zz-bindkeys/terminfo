@@ -1,0 +1,10 @@
+(( ${+terminfo[khome]} )) && bindkey $terminfo[khome] beginning-of-line
+(( ${+terminfo[kend]} )) && bindkey $terminfo[kend] end-of-line
+(( ${+terminfo[kdch1]} )) && bindkey $terminfo[kdch1] delete-char
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+  autoload -Uz add-zle-hook-widget
+  function enter_keyboard_transmit_mode { echoti smkx }
+  function leave_keyboard_transmit_mode { echoti rmkx }
+  add-zle-hook-widget -Uz zle-line-init   enter_keyboard_transmit_mode
+  add-zle-hook-widget -Uz zle-line-finish leave_keyboard_transmit_mode
+fi

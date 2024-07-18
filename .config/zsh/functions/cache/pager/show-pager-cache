@@ -1,4 +1,0 @@
-readonly local cache=$(pager-cache)
-if [[ -f $cache ]]; then
-	p $cache
-fi
