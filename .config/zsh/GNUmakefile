@@ -13,13 +13,17 @@ all: $(TARGET) cache zcompile
 zcompile:
 	bin/zcompile $(TARGET) .zshenv functions cache
 
-.zshrc:
+zshrc-src := $(shell find src/rc.d -type f)
+.zshrc: $(zshrc-src)
 	bin/render src/rc.d
 	bin/concat src/rc.d >$@
-.zlogin:
+zlogin-src := $(shell find src/login.d -type f)
+.zlogin: $(zlogin-src)
 	bin/concat src/login.d >$@
-.zlogout:
+zlogout-src := $(shell find src/logout.d -type f)
+.zlogout: $(zlogout-src)
 	bin/concat src/logout.d >$@
+
 .zcompdump:
 	zsh -c 'autoload -Uz compinit; compinit'
 

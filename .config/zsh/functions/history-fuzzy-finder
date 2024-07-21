@@ -1,0 +1,5 @@
+if [[ -n $ATUIN_SESSION ]]; then
+	atuin search -r --cmd-only $@ | s $@
+else
+	history-all -n | s $@
+fi

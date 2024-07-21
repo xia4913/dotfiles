@@ -1,4 +1,6 @@
-zsh-defer -c '
-	. $ZDOTDIR/cache/atuin
-	ZSH_AUTOSUGGEST_STRATEGY=(history atuin)
-'
+if [[ -z $DOAS_USER ]]; then
+	zsh-defer -c '
+		. $ZDOTDIR/cache/atuin
+		ZSH_AUTOSUGGEST_STRATEGY=(history atuin)
+	'
+fi
