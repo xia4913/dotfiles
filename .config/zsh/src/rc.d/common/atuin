@@ -1,4 +1,4 @@
-if (( $+command[atuin] )) && [[ -z $DOAS_USER ]]; then
+if (( $+commands[atuin] )) && [[ -z $DOAS_USER ]]; then
 	zsh-defer -c '
 		. $ZDOTDIR/cache/atuin
 		ZSH_AUTOSUGGEST_STRATEGY=(history atuin)
