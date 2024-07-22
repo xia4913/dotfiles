@@ -34,7 +34,7 @@ cache/pager:
 cache/path:
 	env-config path -z >$@
 cache/sheldon: ~/.config/sheldon/plugins.toml
-	sheldon source >$@
+	sheldon source | sed "s#$(HOME)#~#" >$@
 cache/atuin:
 	atuin init --disable-up-arrow zsh >$@
 cache/mise:
