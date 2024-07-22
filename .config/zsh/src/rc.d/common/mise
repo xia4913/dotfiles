@@ -1,1 +1,3 @@
-zsh-defer . $ZDOTDIR/cache/mise
+if (( $+command[mise] )); then
+	zsh-defer . $ZDOTDIR/cache/mise
+fi
