@@ -1,0 +1,5 @@
+[Unit]
+Description=niri compositor session
+BindsTo=wayland-session.target
+Wants=wayland-session.target
+After=wayland-session.target

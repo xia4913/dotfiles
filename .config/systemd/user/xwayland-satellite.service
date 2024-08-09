@@ -1,0 +1,12 @@
+[Unit]
+Description=xwayland-satellite
+BindsTo=graphical-session.target
+
+[Service]
+Type=simple
+ExecCondition=/bin/sh -c '[ -n "$WAYLAND_DISPLAY" ]'
+ExecStart=/usr/bin/xwayland-satellite
+ExecStartPost=/usr/bin/systemctl --user set-environment DISPLAY=:0
+
+[Install]
+WantedBy=graphical-session.target

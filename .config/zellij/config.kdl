@@ -40,7 +40,7 @@ plugins {
         mode_resize  "#[fg=red]{name}"
         mode_default_to_mode "resize"
 
-        tab_normal   "#[fg=white]{index}{sync_indicator}{fullscreen_indicator}{floating_indicator}#[fg=0]:#[fg=whitte]{name}"
+        tab_normal   "#[fg=white]{index}{sync_indicator}{fullscreen_indicator}{floating_indicator}#[fg=0]:#[fg=white]{name}"
         tab_active   "#[fg=blue]{index}{sync_indicator}{fullscreen_indicator}{floating_indicator}#[fg=0]:#[fg=white]{name}"
         tab_separator " "
         tab_sync_indicator       "S"
@@ -85,7 +85,6 @@ keybinds clear-defaults=true {
         bind "Space" { ToggleFloatingPanes;       SwitchToMode "locked"; }
         bind "f"     { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
         bind "=" { Resize "Increase"; }
-        bind "+" { Resize "Increase"; }
         bind "-" { Resize "Decrease"; }
         bind "1" { GoToTab 1; SwitchToMode "locked"; }
         bind "2" { GoToTab 2; SwitchToMode "locked"; }
@@ -136,7 +135,7 @@ keybinds clear-defaults=true {
         bind "/" { SwitchToMode "entersearch"; SearchInput 0; }
     }
     scroll {
-        bind "e" { EditScrollback; SwitchToMode "normal"; }
+        bind "E" { EditScrollback; SwitchToMode "locked"; }
     }
     search {
         bind "n" { Search "down"; }
