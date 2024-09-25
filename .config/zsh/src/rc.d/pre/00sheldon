@@ -5,6 +5,7 @@ _sheldon-hook-post-zsh-syntax-highlighting() {
 _sheldon-hook-post-zsh-autosuggestions() {
 	ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=("${(@)ZSH_AUTOSUGGEST_ACCEPT_WIDGETS#forward-char}")
 	ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS+=(forward-char forward-word-match)
+	if (( $(echoti colors) == 8 )) && ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=black,bold
 	unfunction $0
 }
 _sheldon-hook-post-duration-info() {
